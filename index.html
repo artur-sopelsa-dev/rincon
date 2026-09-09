@@ -3,10 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rincón del Vino — Vinhos que contam histórias</title>
+    <title>Rincón del Vino — Curadoria de Vinhos Argentinos e Chilenos</title>
     <meta
       name="description"
-      content="Rincón del Vino — curadoria de rótulos de pequenos produtores da Argentina e do Chile."
+      content="A Rincón del Vino é uma garrafeira especializada em vinhos argentinos e chilenos de pequenos produtores. Rótulos provados e selecionados a dedo, com retirada em loja."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://rincon-zeta.vercel.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Rincón del Vino" />
+    <meta property="og:title" content="Rincón del Vino — Curadoria de Vinhos Argentinos e Chilenos" />
+    <meta
+      property="og:description"
+      content="Garrafeira especializada em vinhos argentinos e chilenos de pequenos produtores, provados e selecionados a dedo."
+    />
+    <meta property="og:url" content="https://rincon-zeta.vercel.app/" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Rincón del Vino — Curadoria de Vinhos Argentinos e Chilenos" />
+    <meta
+      name="twitter:description"
+      content="Garrafeira especializada em vinhos argentinos e chilenos de pequenos produtores, provados e selecionados a dedo."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,6 +32,17 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LiquorStore",
+        "name": "Rincón del Vino",
+        "description": "Garrafeira especializada em vinhos argentinos e chilenos de pequenos produtores.",
+        "url": "https://rincon-zeta.vercel.app/",
+        "sameAs": ["https://www.instagram.com/rincondelvino.arg/"],
+        "priceRange": "$$"
+      }
+    </script>
   </head>
   <body>
     <div class="shell">
@@ -28,8 +56,8 @@
 
         <nav class="rail__nav" id="nav-links">
           <a href="#curadoria">Curadoria</a>
-          <a href="produtos/">Seleção</a>
-          <a href="#editorial">Editorial</a>
+          <a href="produtos/">Rótulos</a>
+          <a href="historia.html">Nossa História</a>
           <a href="#contato">Contato</a>
         </nav>
 
@@ -87,35 +115,35 @@
           <div class="hero__main">
             <p class="hero__kicker">Vinhos que contam histórias</p>
             <h1 class="hero__headline">
-              A gente bebe<br />
-              antes de vender<br />
-              pra você.
+              Só vendemos<br />
+              o que já<br />
+              provamos.
             </h1>
             <p class="hero__stat">
-              <strong>80+</strong> rótulos de vinícolas pequenas, de 4
+              <strong>80+</strong> rótulos de vinícolas pequenas, em 4
               países — cada um provado na adega antes de entrar na
               seleção.
             </p>
             <div class="hero__actions">
               <a href="produtos/" class="cta">Ver os rótulos</a>
-              <a href="#contato" class="link-underline">Fale com a gente →</a>
+              <a href="#contato" class="link-underline">Fale conosco →</a>
             </div>
           </div>
         </section>
 
         <section class="block" id="curadoria">
           <div class="block__grid">
-            <h2 class="block__title">Como a gente escolhe o que vende</h2>
+            <h2 class="block__title">Como escolhemos o que vendemos</h2>
 
             <div class="block__copy">
               <p class="body-copy">
-                A gente visita o produtor, senta na adega e prova a safra
-                antes de decidir se o rótulo entra na seleção. Se não é
-                algo que a gente compraria de novo com o próprio dinheiro,
-                a gente não vende.
+                Visitamos o produtor, sentamos à mesa na adega e provamos
+                a safra antes de decidir se o rótulo entra na seleção. Se
+                não é algo que compraríamos de novo com o próprio
+                dinheiro, não entra na loja.
               </p>
               <p class="body-copy">
-                Por isso a lista é curta: menos rótulo, mais atenção em
+                Por isso a lista é curta: menos rótulos, mais atenção a
                 cada um.
               </p>
             </div>
@@ -127,11 +155,11 @@
               </li>
               <li>
                 <p class="fact-list__label">Critério</p>
-                <p class="fact-list__text">Só entra o que a gente compraria de novo.</p>
+                <p class="fact-list__text">Só entra o que compraríamos de novo.</p>
               </li>
               <li>
                 <p class="fact-list__label">Lista</p>
-                <p class="fact-list__text">Curta de propósito — menos rótulo, mais atenção.</p>
+                <p class="fact-list__text">Curta por escolha — menos rótulos, mais atenção.</p>
               </li>
             </ul>
           </div>
@@ -140,7 +168,7 @@
         <section class="block block--catalog" id="colecao">
           <div class="catalog" id="catalog">
             <div class="catalog__frame">
-              <h2 class="block__title">O que tá na loja agora</h2>
+              <h2 class="block__title">Nossa seleção atual</h2>
 
               <div class="bento" id="catalog-grid">
                 <div class="catalog-product is-active" data-product="0">
@@ -216,7 +244,8 @@
                   <article class="bento__item">
                     <p class="wine-card__type">Resumo</p>
                     <p class="wine-card__note">
-                      Descoberta recente que já virou fixa por aqui.
+                      Descoberta recente, hoje presença constante na
+                      nossa seleção.
                     </p>
                   </article>
                   <article class="bento__item">
@@ -258,31 +287,27 @@
           <a href="produtos/" class="link-underline catalog__more">Ver todos os produtos →</a>
         </section>
 
-        <section class="block block--banner" id="editorial">
+        <section class="block block--banner" id="historia">
           <div class="block__grid block__grid--narrow">
-            <h2 class="block__title">A gente também escreve sobre o que tá na taça</h2>
+            <h2 class="block__title">Nossa história</h2>
             <p class="body-copy">
-              No Instagram a gente conta de onde vem cada rótulo, quem faz
-              e por que ele entrou na seleção — sem forçar a barra em cima
-              de terroir.
+              Da adega até a taça, cada rótulo da Rincón del Vino carrega
+              uma escolha: pequenos produtores da Argentina e do Chile,
+              provados de perto e selecionados com critério.
             </p>
-            <a
-              href="https://www.instagram.com/rincondelvino.arg/"
-              class="link-underline"
-              target="_blank"
-              rel="noopener"
-            >Ver no Instagram →</a>
+            <a href="historia.html" class="link-underline">Conhecer nossa história →</a>
           </div>
         </section>
 
         <section class="block" id="contato">
           <div class="contact-grid">
             <div class="contact__info">
-              <h2 class="block__title">Quer uma indicação?</h2>
+              <h2 class="block__title">Busca uma recomendação?</h2>
               <p class="body-copy">
-                Manda uma mensagem contando a ocasião ou o que você curte
-                beber — a gente responde com sugestões da loja. Também
-                atendemos por encomenda pra eventos e presentes.
+                Envie uma mensagem contando a ocasião ou o que você
+                aprecia beber — respondemos com sugestões da nossa
+                seleção. Também atendemos encomendas para eventos e
+                presentes.
               </p>
 
               <dl class="contact__details">
@@ -326,8 +351,8 @@
       <p class="footer__wordmark">Rincón del vino</p>
       <nav class="footer__links">
         <a href="#curadoria">Curadoria</a>
-        <a href="produtos/">Seleção</a>
-        <a href="#editorial">Editorial</a>
+        <a href="produtos/">Rótulos</a>
+        <a href="historia.html">Nossa História</a>
         <a href="#contato">Contato</a>
       </nav>
       <p class="footer__copy">

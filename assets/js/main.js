@@ -141,7 +141,7 @@ var RinconCart = (function () {
     lines.push("Total: " + formatPrice(total()));
     lines.push("");
     lines.push(
-      "Sei que não tem entrega e que a retirada é na loja — aguardo confirmação!"
+      "Sei que não há entrega e que a retirada é feita na loja — aguardo confirmação!"
     );
     var text = encodeURIComponent(lines.join("\n"));
     return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + text;
