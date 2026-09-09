@@ -18,68 +18,6 @@
   });
 })();
 
-// -------------------- Catalog: pinned scroll-through product switcher --------------------
-(function () {
-  var catalog = document.getElementById("catalog");
-  if (!catalog) return;
-
-  var cards = Array.prototype.slice.call(
-    catalog.querySelectorAll(".catalog__card")
-  );
-  var dots = Array.prototype.slice.call(catalog.querySelectorAll(".catalog__dot"));
-  var count = cards.length;
-  var mq = window.matchMedia("(min-width: 921px)");
-  var rafId = null;
-  var activeIndex = 0;
-
-  function setActive(index) {
-    if (index === activeIndex) return;
-    activeIndex = index;
-    cards.forEach(function (card, i) {
-      card.classList.toggle("is-active", i === index);
-    });
-    dots.forEach(function (dot, i) {
-      dot.classList.toggle("is-active", i === index);
-    });
-  }
-
-  function onScroll() {
-    rafId = null;
-    var rect = catalog.getBoundingClientRect();
-    var total = rect.height - window.innerHeight;
-    if (total <= 0) return;
-    var progress = Math.min(Math.max(-rect.top / total, 0), 1);
-    var index = Math.min(Math.floor(progress * count), count - 1);
-    setActive(index);
-  }
-
-  function requestUpdate() {
-    if (!rafId) rafId = requestAnimationFrame(onScroll);
-  }
-
-  function enable() {
-    catalog.classList.add("is-active-js");
-    window.addEventListener("scroll", requestUpdate, { passive: true });
-    requestUpdate();
-  }
-
-  function disable() {
-    catalog.classList.remove("is-active-js");
-    window.removeEventListener("scroll", requestUpdate);
-  }
-
-  function sync() {
-    if (mq.matches) {
-      enable();
-    } else {
-      disable();
-    }
-  }
-
-  sync();
-  mq.addEventListener("change", sync);
-})();
-
 // -------------------- Contact form (no backend: UI-only confirmation) --------------------
 (function () {
   var form = document.getElementById("contact-form");
