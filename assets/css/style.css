@@ -171,12 +171,14 @@ a {
 
 .hero {
   min-height: 92vh;
-  display: grid;
-  grid-template-columns: 1.35fr 0.65fr;
-  gap: 4vw;
+  display: flex;
   align-items: center;
   padding: 6vh 5vw;
   background: radial-gradient(55% 45% at 20% 15%, rgba(139, 79, 26, 0.28), transparent 70%);
+}
+
+.hero__main {
+  max-width: 40rem;
 }
 
 .hero__kicker {
@@ -215,30 +217,6 @@ a {
   display: flex;
   align-items: center;
   gap: 1.8rem;
-}
-
-.hero__frame {
-  position: relative;
-  aspect-ratio: 3 / 4;
-  border: 1px solid rgba(201, 162, 75, 0.45);
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-.hero__frame::after {
-  content: "";
-  position: absolute;
-  inset: 9px;
-  border: 1px solid rgba(201, 162, 75, 0.2);
-  pointer-events: none;
-}
-
-.hero__frame-img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 78% 45%;
 }
 
 .link-underline {
@@ -1032,15 +1010,8 @@ a {
   }
 
   .hero {
-    grid-template-columns: 1fr;
     text-align: left;
     padding-top: 8vh;
-    gap: 2.4rem;
-  }
-
-  .hero__frame {
-    aspect-ratio: 16 / 10;
-    max-width: 28rem;
   }
 
   .block__grid,
