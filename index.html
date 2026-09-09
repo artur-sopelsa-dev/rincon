@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rincón — Vinícola</title>
+    <title>Rincón del Vino — Vinhos que contam histórias</title>
     <meta
       name="description"
-      content="Vinícola Rincón — vinhos de terroir único, produzidos em pequenos lotes."
+      content="Rincón del Vino — curadoria de rótulos de pequenos produtores da Argentina e do Chile."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,15 +19,21 @@
   <body>
     <header class="nav" id="nav">
       <div class="nav__inner">
-        <a href="#topo" class="nav__logo">Rincón</a>
+        <a href="#topo" class="nav__logo">
+          <svg class="nav__logo-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+            <path d="M12 21c0-6 1-9 6-13-6 0-9 2-9 8 0-5-3-8-7-8 3 4 3 9 6 13" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M12 21V12" stroke-linecap="round" />
+          </svg>
+          Rincón <span class="nav__logo-sub">del vino</span>
+        </a>
 
         <nav class="nav__links" id="nav-links">
-          <a href="#filosofia">Filosofia</a>
-          <a href="#colecao">Coleção</a>
+          <a href="#curadoria">Curadoria</a>
+          <a href="#colecao">Seleção</a>
           <a href="#contato">Contato</a>
         </nav>
 
-        <a href="#contato" class="nav__cta">Agendar degustação</a>
+        <a href="#contato" class="nav__cta">Pedir recomendação</a>
 
         <button
           class="nav__toggle"
@@ -48,17 +54,18 @@
         <div class="hero__bg-glow" aria-hidden="true"></div>
 
         <div class="hero__content">
-          <p class="eyebrow">Vinícola Rincón · Colheita Autoral</p>
+          <p class="eyebrow">Rincón del Vino · Curadoria de Rótulos</p>
           <h1 class="headline">
-            O silêncio<br />
-            entre a <em>vinha</em><br />
-            e a taça
+            Vinhos que<br />
+            <em>contam</em><br />
+            histórias
           </h1>
           <p class="subcopy">
-            Vinhos de terroir único, produzidos em pequenos lotes para
-            preservar cada nuance da fruta.
+            Garimpamos rótulos de pequenos produtores da Argentina e do
+            Chile — cada garrafa que chega até você já foi provada,
+            questionada e escolhida a dedo.
           </p>
-          <a href="#colecao" class="cta">Conhecer a coleção</a>
+          <a href="#colecao" class="cta">Ver a seleção</a>
         </div>
 
         <div class="frame" id="frame">
@@ -82,126 +89,127 @@
         </div>
       </section>
 
-      <section class="philosophy" id="filosofia">
+      <section class="philosophy" id="curadoria">
         <div class="philosophy__text">
-          <p class="eyebrow">Nossa filosofia</p>
+          <p class="eyebrow">Como escolhemos</p>
           <h2 class="section-title">
-            Uma taça, uma safra,<br />
-            uma história
+            Não fazemos vinho.<br />
+            Encontramos os que valem a pena.
           </h2>
           <p class="body-copy">
-            Há três gerações cultivamos a mesma encosta, respeitando o ritmo
-            da videira em vez de forçá-lo. Cada rótulo nasce de um único
-            talhão, colhido à mão e vinificado em lotes pequenos o
-            suficiente para caber a atenção de quem faz.
+            Viajamos até os vinhedos, sentamos à mesa com quem faz e
+            provamos safra a safra antes de trazer um rótulo pra loja.
+            Preferimos vinícolas pequenas, de produção limitada, onde ainda
+            dá pra sentir a mão de quem fez.
           </p>
           <p class="body-copy">
-            Não perseguimos escala — perseguimos identidade. É o solo, a
-            altitude e o tempo que assinam cada garrafa, não a fórmula.
+            O resultado é uma seleção enxuta — sem prateleira lotada, sem
+            rótulo genérico. Só o que a gente beberia de novo.
           </p>
         </div>
 
         <div class="philosophy__figure">
           <img
             src="assets/img/grapes.webp"
-            alt="Cacho de uvas tintas colhido à mão"
+            alt="Cacho de uvas tintas"
           />
-          <p class="philosophy__caption">Colheita manual, uva a uva.</p>
+          <p class="philosophy__caption">Provado antes de chegar até você.</p>
         </div>
       </section>
 
       <section class="stats">
         <div class="stats__grid">
           <div class="stat">
-            <p class="stat__number">1987</p>
-            <p class="stat__label">Primeira colheita</p>
+            <p class="stat__number">80+</p>
+            <p class="stat__label">Rótulos selecionados</p>
           </div>
           <div class="stat">
-            <p class="stat__number">42&nbsp;ha</p>
-            <p class="stat__label">Vinhedos em socalcos</p>
+            <p class="stat__number">4</p>
+            <p class="stat__label">Países de origem</p>
           </div>
           <div class="stat">
-            <p class="stat__number">3</p>
-            <p class="stat__label">Gerações na condução</p>
+            <p class="stat__number">10&nbsp;anos</p>
+            <p class="stat__label">Garimpando vinícolas</p>
           </div>
           <div class="stat">
-            <p class="stat__number">12</p>
-            <p class="stat__label">Rótulos em produção</p>
+            <p class="stat__number">100%</p>
+            <p class="stat__label">Provados antes da prateleira</p>
           </div>
         </div>
       </section>
 
       <section class="collection" id="colecao">
-        <p class="eyebrow collection__eyebrow">A coleção</p>
+        <p class="eyebrow collection__eyebrow">A seleção</p>
         <h2 class="section-title collection__title">
           Rótulos que carregam o lugar de onde vieram
         </h2>
 
         <div class="collection__grid">
           <article class="wine-card">
-            <p class="wine-card__type">Tinto</p>
-            <h3 class="wine-card__name">Reserva do Rincón</h3>
+            <p class="wine-card__type">Malbec · Mendoza, Argentina</p>
+            <h3 class="wine-card__name">Finca Ambrosía</h3>
             <p class="wine-card__note">
-              Fruta madura, taninos aveludados e um final longo de especiarias
-              — colhido nos talhões mais altos da encosta.
+              Da Cordilheira dos Andes, um Malbec de altitude com estrutura
+              para guarda e fruta bem madura.
             </p>
-            <a href="#contato" class="wine-card__link">Ver ficha técnica →</a>
+            <a href="#contato" class="wine-card__link">Consultar disponibilidade →</a>
           </article>
 
           <article class="wine-card">
-            <p class="wine-card__type">Branco</p>
-            <h3 class="wine-card__name">Altitude</h3>
+            <p class="wine-card__type">Cabernet Sauvignon · Chile</p>
+            <h3 class="wine-card__name">Don Melchor</h3>
             <p class="wine-card__note">
-              Acidez viva e notas cítricas, resultado das noites frias dos
-              vinhedos a 900 metros.
+              Tradição centenária — um dos rótulos mais respeitados da
+              América do Sul, ano após ano.
             </p>
-            <a href="#contato" class="wine-card__link">Ver ficha técnica →</a>
+            <a href="#contato" class="wine-card__link">Consultar disponibilidade →</a>
           </article>
 
           <article class="wine-card">
-            <p class="wine-card__type">Rosé</p>
-            <h3 class="wine-card__name">Colheita de Verão</h3>
+            <p class="wine-card__type">Malbec · Agrelo, Argentina</p>
+            <h3 class="wine-card__name">Anaia</h3>
             <p class="wine-card__note">
-              Leve e floral, pensado para ser bebido jovem, sem pressa,
-              à mesa com quem se gosta.
+              Uma joia escondida aos pés da Cordilheira — terroir e
+              elegância em cada taça.
             </p>
-            <a href="#contato" class="wine-card__link">Ver ficha técnica →</a>
+            <a href="#contato" class="wine-card__link">Consultar disponibilidade →</a>
           </article>
         </div>
       </section>
 
       <section class="quote">
         <blockquote class="quote__text">
-          “Rincón não engarrafa vinho — engarrafa um lugar e o tempo que ele
-          levou para chegar até aqui.”
+          “Selecionar vinho não é sobre rótulo — é sobre lugar, gente e
+          tempo. A gente só engarrafa a certeza de já ter provado antes.”
         </blockquote>
-        <p class="quote__attribution">— Guia de Vinhos do Sul, edição 2025</p>
+        <p class="quote__attribution">— Equipe Rincón del Vino</p>
+        <p class="quote__press">Reconhecida pela Drinks International</p>
       </section>
 
       <section class="contact" id="contato">
         <div class="contact__info">
-          <p class="eyebrow">Vamos conversar</p>
-          <h2 class="section-title">Agende uma visita à vinícola</h2>
+          <p class="eyebrow">Fale com a curadoria</p>
+          <h2 class="section-title">Vamos encontrar sua garrafa</h2>
           <p class="body-copy">
-            Recebemos grupos pequenos para degustações guiadas, sob
-            agendamento prévio. Conte um pouco sobre a ocasião e retornamos
-            em até dois dias úteis.
+            Conte a ocasião, o perfil de paladar ou o orçamento — a gente
+            sugere o rótulo certo da nossa seleção. Também atendemos por
+            encomenda para eventos e presentes.
           </p>
 
           <dl class="contact__details">
             <div>
+              <dt>Instagram</dt>
+              <dd><a href="https://www.instagram.com/rincondelvino.arg/" target="_blank" rel="noopener">@rincondelvino.arg</a></dd>
+            </div>
+            <div>
               <dt>E-mail</dt>
-              <dd><a href="mailto:contato@vinicolarincon.com.br">contato@vinicolarincon.com.br</a></dd>
-            </div>
-            <div>
-              <dt>Telefone</dt>
-              <dd><a href="tel:+555400000000">+55 (54) 0000-0000</a></dd>
-            </div>
-            <div>
-              <dt>Endereço</dt>
-              <dd>Estrada do Rincón, km 12 — Serra Gaúcha, RS</dd>
+              <dd><a href="mailto:contato@rincondelvino.com">contato@rincondelvino.com</a></dd>
             </div>
           </dl>
+          <p class="contact__note">
+            * Dados de contato ilustrativos — substituir pelos reais antes
+            de publicar.
+          </p>
         </div>
 
         <form class="contact__form" id="contact-form" novalidate>
@@ -214,7 +222,7 @@
             <input type="email" id="email" name="email" required />
           </div>
           <div class="field">
-            <label for="message">Mensagem</label>
+            <label for="message">O que você procura?</label>
             <textarea id="message" name="message" rows="4" required></textarea>
           </div>
           <button type="submit" class="cta cta--block">Enviar mensagem</button>
@@ -226,24 +234,29 @@
     <footer class="footer">
       <div class="footer__inner">
         <div class="footer__brand">
-          <a href="#topo" class="nav__logo">Rincón</a>
-          <p class="footer__tagline">Vinhos de terroir, feitos em pequenos lotes.</p>
+          <a href="#topo" class="nav__logo">
+            <svg class="nav__logo-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+              <path d="M12 21c0-6 1-9 6-13-6 0-9 2-9 8 0-5-3-8-7-8 3 4 3 9 6 13" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M12 21V12" stroke-linecap="round" />
+            </svg>
+            Rincón <span class="nav__logo-sub">del vino</span>
+          </a>
+          <p class="footer__tagline">Vinhos que contam histórias.</p>
         </div>
 
         <nav class="footer__links">
-          <a href="#filosofia">Filosofia</a>
-          <a href="#colecao">Coleção</a>
+          <a href="#curadoria">Curadoria</a>
+          <a href="#colecao">Seleção</a>
           <a href="#contato">Contato</a>
         </nav>
 
         <div class="footer__social">
-          <a href="#" target="_blank" rel="noopener">Instagram</a>
-          <a href="#" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.instagram.com/rincondelvino.arg/" target="_blank" rel="noopener">Instagram</a>
         </div>
       </div>
 
       <p class="footer__copy">
-        © <span id="year"></span> Vinícola Rincón. Todos os direitos
+        © <span id="year"></span> Rincón del Vino. Todos os direitos
         reservados.
       </p>
     </footer>

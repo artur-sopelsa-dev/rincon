@@ -1,5 +1,6 @@
 :root {
-  --bg: #0e0908;
+  --bg: #180f09;
+  --brown: #3a2415;
   --wine: #7a1530;
   --gold: #c9a24b;
   --cream: #f2e9dd;
@@ -41,9 +42,30 @@ img {
 }
 
 .nav.is-scrolled {
-  background: rgba(14, 9, 8, 0.88);
+  background: rgba(24, 15, 9, 0.9);
   backdrop-filter: blur(10px);
   border-bottom-color: rgba(201, 162, 75, 0.18);
+}
+
+.nav__logo {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+
+.nav__logo-leaf {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  color: var(--gold);
+}
+
+.nav__logo-sub {
+  font-family: "Jost", sans-serif;
+  font-size: 0.6rem;
+  font-style: italic;
+  letter-spacing: 0.08em;
+  color: var(--gold);
 }
 
 .nav__inner {
@@ -134,8 +156,8 @@ img {
   inset: 0;
   z-index: 0;
   background:
-    radial-gradient(48% 60% at 70% 45%, rgba(122, 21, 48, 0.55), transparent 70%),
-    radial-gradient(30% 40% at 15% 20%, rgba(201, 162, 75, 0.08), transparent 70%);
+    radial-gradient(48% 60% at 70% 45%, rgba(139, 79, 26, 0.42), transparent 70%),
+    radial-gradient(30% 40% at 15% 20%, rgba(201, 162, 75, 0.1), transparent 70%);
   pointer-events: none;
 }
 
@@ -426,7 +448,7 @@ main > section {
 .wine-card {
   padding: 2.2rem 1.9rem;
   border: 1px solid rgba(201, 162, 75, 0.22);
-  background: linear-gradient(180deg, rgba(122, 21, 48, 0.12), transparent 60%);
+  background: linear-gradient(180deg, rgba(139, 79, 26, 0.16), transparent 60%);
   border-radius: 2px;
   transition: border-color 0.3s ease, transform 0.3s ease;
 }
@@ -474,7 +496,15 @@ main > section {
 .quote {
   position: relative;
   text-align: center;
-  background: radial-gradient(45% 60% at 50% 40%, rgba(122, 21, 48, 0.35), transparent 70%);
+  background: radial-gradient(45% 60% at 50% 40%, rgba(139, 79, 26, 0.3), transparent 70%);
+}
+
+.quote__press {
+  margin: 0.6rem 0 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(242, 233, 221, 0.45);
 }
 
 .quote__text {
@@ -582,6 +612,13 @@ main > section {
   margin: 0;
   font-size: 0.85rem;
   color: var(--gold);
+}
+
+.contact__note {
+  margin: 1.5rem 0 0;
+  font-size: 0.78rem;
+  font-style: italic;
+  color: rgba(242, 233, 221, 0.4);
 }
 
 /* -------------------- Footer -------------------- */
