@@ -284,54 +284,7 @@ a {
   color: rgba(242, 233, 221, 0.68);
 }
 
-/* -------------------- Bento collection grid -------------------- */
-
-.bento {
-  margin-top: 1rem;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr;
-  grid-template-rows: repeat(2, auto);
-  gap: 1px;
-  background: rgba(201, 162, 75, 0.18);
-}
-
-.bento__item {
-  background: var(--bg);
-  padding: 2.2rem 1.9rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.bento__item--feature {
-  grid-column: 1;
-  grid-row: 1 / span 2;
-}
-
-.bento__item--feature .wine-card__name {
-  font-size: 2.2rem;
-}
-
-.bento__item:nth-child(2) {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-.bento__item:nth-child(3) {
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.bento__item--cta {
-  grid-column: 3;
-  grid-row: 1 / span 2;
-  background: var(--brown);
-  text-decoration: none;
-  color: inherit;
-}
-
-.bento__item--cta:hover {
-  background: rgba(58, 36, 21, 0.7);
-}
+/* -------------------- Catalog (pinned scroll-through) -------------------- */
 
 .wine-card__type {
   margin: 0 0 0.6rem;
@@ -341,29 +294,117 @@ a {
   color: var(--gold);
 }
 
-.wine-card__name {
-  margin: 0 0 0.8rem;
+.wine-card__note {
+  margin: 1.2rem 0;
+  max-width: 30rem;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: rgba(242, 233, 221, 0.68);
+}
+
+.catalog {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.catalog__frame {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top: 1px solid rgba(201, 162, 75, 0.2);
+  border-bottom: 1px solid rgba(201, 162, 75, 0.2);
+}
+
+.catalog__card {
+  display: none;
+  max-width: 32rem;
+}
+
+.catalog__card.is-active {
+  display: block;
+}
+
+.catalog__count {
+  margin: 0 0 1.2rem;
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
+  color: rgba(242, 233, 221, 0.4);
+}
+
+.catalog__name {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(2.4rem, 4.5vw, 3.4rem);
   color: var(--cream);
 }
 
-.wine-card__note {
-  margin: 0 0 1.2rem;
-  font-size: 0.88rem;
-  line-height: 1.6;
-  color: rgba(242, 233, 221, 0.65);
-  flex: 1;
+.catalog__specs {
+  list-style: none;
+  margin: 1.4rem 0 0;
+  padding: 1.2rem 0 0;
+  border-top: 1px solid rgba(201, 162, 75, 0.2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.6rem;
+  font-size: 0.86rem;
+  color: rgba(242, 233, 221, 0.68);
 }
 
-.wine-card__link {
-  font-size: 0.8rem;
-  color: var(--gold);
-  text-decoration: none;
+.catalog__dots {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 2rem;
 }
 
-.wine-card__link:hover {
-  text-decoration: underline;
+.catalog__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(201, 162, 75, 0.3);
+}
+
+.catalog__dot.is-active {
+  background: var(--gold);
+}
+
+.catalog__track {
+  display: flex;
+  flex-direction: column;
+}
+
+.catalog__step {
+  height: 100vh;
+}
+
+.catalog__more {
+  display: inline-block;
+  margin-top: 3rem;
+}
+
+/* Without JS (or when disabled below 921px), show every card stacked instead of pinning */
+.catalog:not(.is-active-js) .catalog__frame {
+  position: static;
+  min-height: 0;
+  gap: 3rem;
+  padding: 2.5rem 0;
+}
+
+.catalog:not(.is-active-js) .catalog__card {
+  display: block;
+}
+
+.catalog:not(.is-active-js) .catalog__card:not(:last-of-type) {
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(201, 162, 75, 0.14);
+}
+
+.catalog:not(.is-active-js) .catalog__dots,
+.catalog:not(.is-active-js) .catalog__track {
+  display: none;
 }
 
 /* -------------------- Invert (light) section -------------------- */
@@ -621,22 +662,6 @@ a {
   .contact-grid {
     grid-template-columns: 1fr;
   }
-
-  .bento {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .bento__item--feature,
-  .bento__item--cta {
-    grid-column: span 2;
-    grid-row: auto;
-  }
-
-  .bento__item:nth-child(2),
-  .bento__item:nth-child(3) {
-    grid-column: auto;
-    grid-row: auto;
-  }
 }
 
 @media (max-width: 560px) {
@@ -648,14 +673,5 @@ a {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
-  }
-
-  .bento {
-    grid-template-columns: 1fr;
-  }
-
-  .bento__item--feature,
-  .bento__item--cta {
-    grid-column: auto;
   }
 }
