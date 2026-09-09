@@ -171,7 +171,9 @@ a {
 
 .hero {
   min-height: 92vh;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 4vw;
   align-items: center;
   padding: 6vh 5vw;
   background: radial-gradient(55% 45% at 20% 15%, rgba(139, 79, 26, 0.28), transparent 70%);
@@ -198,19 +200,25 @@ a {
   color: var(--cream);
 }
 
-.hero__stat {
-  margin: 0 0 2.4rem;
-  max-width: 27rem;
-  font-size: 0.96rem;
-  line-height: 1.65;
-  color: rgba(242, 233, 221, 0.72);
+.hero__panel {
+  border-left: 1px solid rgba(201, 162, 75, 0.35);
+  padding-left: 2.2rem;
 }
 
-.hero__stat strong {
+.hero__panel-number {
+  margin: 0 0 0.8rem;
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-weight: 500;
-  font-size: 1.35rem;
+  font-size: clamp(3rem, 6vw, 5rem);
   color: var(--gold);
+  line-height: 1;
+}
+
+.hero__panel-label {
+  margin: 0;
+  max-width: 20rem;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: rgba(242, 233, 221, 0.68);
 }
 
 .hero__actions {
@@ -1010,8 +1018,16 @@ a {
   }
 
   .hero {
+    grid-template-columns: 1fr;
     text-align: left;
     padding-top: 8vh;
+  }
+
+  .hero__panel {
+    border-left: none;
+    border-top: 1px solid rgba(201, 162, 75, 0.35);
+    padding-left: 0;
+    padding-top: 1.6rem;
   }
 
   .block__grid,
