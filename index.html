@@ -51,69 +51,39 @@
 
     <main>
       <section class="hero" id="topo">
-        <div class="hero__bg-glow" aria-hidden="true"></div>
-
-        <div class="hero__content">
-          <p class="eyebrow">Rincón del Vino · Curadoria de Rótulos</p>
-          <h1 class="headline">
-            Vinhos que<br />
-            <em>contam</em><br />
-            histórias
-          </h1>
-          <p class="subcopy">
-            Garimpamos rótulos de pequenos produtores da Argentina e do
-            Chile — cada garrafa que chega até você já foi provada,
-            questionada e escolhida a dedo.
-          </p>
-          <a href="#colecao" class="cta">Ver a seleção</a>
-        </div>
-
-        <div class="frame" id="frame">
-          <div class="layer layer--back-bokeh" data-depth="0.35">
-            <div class="layer__inner">
-              <img src="assets/img/grapes.webp" alt="" />
-            </div>
-          </div>
-
-          <div class="layer layer--glass" data-depth="0.6">
-            <div class="layer__inner">
-              <img src="assets/img/glass.webp" alt="Taça de vinho tinto" />
-            </div>
-          </div>
-
-          <div class="layer layer--front-grapes" data-depth="0.9">
-            <div class="layer__inner">
-              <img src="assets/img/grapes.webp" alt="Cacho de uvas tintas" />
-            </div>
-          </div>
+        <p class="hero__kicker">Vinhos que contam histórias</p>
+        <h1 class="hero__headline">
+          A gente bebe antes<br />
+          de vender pra você.
+        </h1>
+        <p class="hero__sub">
+          Rótulos de vinícolas pequenas da Argentina e do Chile, trazidos
+          um por um pra loja depois de provados na adega.
+        </p>
+        <div class="hero__actions">
+          <a href="#colecao" class="cta">Ver os rótulos</a>
+          <a href="#contato" class="link-underline">Fale com a gente →</a>
         </div>
       </section>
 
       <section class="philosophy" id="curadoria">
         <div class="philosophy__text">
-          <p class="eyebrow">Como escolhemos</p>
-          <h2 class="section-title">
-            Não fazemos vinho.<br />
-            Encontramos os que valem a pena.
-          </h2>
+          <h2 class="section-title">Como a gente escolhe o que vai pra loja</h2>
           <p class="body-copy">
-            Viajamos até os vinhedos, sentamos à mesa com quem faz e
-            provamos safra a safra antes de trazer um rótulo pra loja.
-            Preferimos vinícolas pequenas, de produção limitada, onde ainda
-            dá pra sentir a mão de quem fez.
+            A gente visita o produtor, senta na adega e prova a safra antes
+            de decidir se o rótulo entra na seleção. Se não é algo que a
+            gente compraria de novo com o próprio dinheiro, não vai pra
+            loja.
           </p>
           <p class="body-copy">
-            O resultado é uma seleção enxuta — sem prateleira lotada, sem
-            rótulo genérico. Só o que a gente beberia de novo.
+            Por isso a lista é curta: menos rótulo, mais atenção em cada
+            um.
           </p>
         </div>
 
         <div class="philosophy__figure">
-          <img
-            src="assets/img/grapes.webp"
-            alt="Cacho de uvas tintas"
-          />
-          <p class="philosophy__caption">Provado antes de chegar até você.</p>
+          <img src="assets/img/grapes.webp" alt="Cacho de uvas tintas" />
+          <p class="philosophy__caption">Onde a seleção começa.</p>
         </div>
       </section>
 
@@ -121,7 +91,7 @@
         <div class="stats__grid">
           <div class="stat">
             <p class="stat__number">80+</p>
-            <p class="stat__label">Rótulos selecionados</p>
+            <p class="stat__label">Rótulos na seleção</p>
           </div>
           <div class="stat">
             <p class="stat__number">4</p>
@@ -129,28 +99,25 @@
           </div>
           <div class="stat">
             <p class="stat__number">10&nbsp;anos</p>
-            <p class="stat__label">Garimpando vinícolas</p>
+            <p class="stat__label">Escolhendo vinícolas</p>
           </div>
           <div class="stat">
             <p class="stat__number">100%</p>
-            <p class="stat__label">Provados antes da prateleira</p>
+            <p class="stat__label">Provado antes de vender</p>
           </div>
         </div>
       </section>
 
       <section class="collection" id="colecao">
-        <p class="eyebrow collection__eyebrow">A seleção</p>
-        <h2 class="section-title collection__title">
-          Rótulos que carregam o lugar de onde vieram
-        </h2>
+        <h2 class="section-title collection__title">O que tá na loja agora</h2>
 
         <div class="collection__grid">
           <article class="wine-card">
             <p class="wine-card__type">Malbec · Mendoza, Argentina</p>
             <h3 class="wine-card__name">Finca Ambrosía</h3>
             <p class="wine-card__note">
-              Da Cordilheira dos Andes, um Malbec de altitude com estrutura
-              para guarda e fruta bem madura.
+              Malbec de altitude, da Cordilheira dos Andes. Boa estrutura
+              pra quem quer guardar.
             </p>
             <a href="#contato" class="wine-card__link">Consultar disponibilidade →</a>
           </article>
@@ -159,8 +126,8 @@
             <p class="wine-card__type">Cabernet Sauvignon · Chile</p>
             <h3 class="wine-card__name">Don Melchor</h3>
             <p class="wine-card__note">
-              Tradição centenária — um dos rótulos mais respeitados da
-              América do Sul, ano após ano.
+              Um clássico chileno, sempre entre os mais premiados da
+              América do Sul.
             </p>
             <a href="#contato" class="wine-card__link">Consultar disponibilidade →</a>
           </article>
@@ -169,31 +136,38 @@
             <p class="wine-card__type">Malbec · Agrelo, Argentina</p>
             <h3 class="wine-card__name">Anaia</h3>
             <p class="wine-card__note">
-              Uma joia escondida aos pés da Cordilheira — terroir e
-              elegância em cada taça.
+              Vinícola pequena de Agrelo — descoberta recente que já virou
+              fixa por aqui.
             </p>
             <a href="#contato" class="wine-card__link">Consultar disponibilidade →</a>
           </article>
         </div>
       </section>
 
-      <section class="quote">
-        <blockquote class="quote__text">
-          “Selecionar vinho não é sobre rótulo — é sobre lugar, gente e
-          tempo. A gente só engarrafa a certeza de já ter provado antes.”
-        </blockquote>
-        <p class="quote__attribution">— Equipe Rincón del Vino</p>
-        <p class="quote__press">Reconhecida pela Drinks International</p>
+      <section class="editorial">
+        <div class="editorial__inner">
+          <h2 class="section-title">A gente também escreve sobre o que tá na taça</h2>
+          <p class="body-copy">
+            No Instagram a gente conta de onde vem cada rótulo, quem faz e
+            por que ele entrou na seleção — sem forçar a barra em cima de
+            terroir.
+          </p>
+          <a
+            href="https://www.instagram.com/rincondelvino.arg/"
+            class="link-underline"
+            target="_blank"
+            rel="noopener"
+          >Ver no Instagram →</a>
+        </div>
       </section>
 
       <section class="contact" id="contato">
         <div class="contact__info">
-          <p class="eyebrow">Fale com a curadoria</p>
-          <h2 class="section-title">Vamos encontrar sua garrafa</h2>
+          <h2 class="section-title">Quer uma indicação?</h2>
           <p class="body-copy">
-            Conte a ocasião, o perfil de paladar ou o orçamento — a gente
-            sugere o rótulo certo da nossa seleção. Também atendemos por
-            encomenda para eventos e presentes.
+            Manda uma mensagem contando a ocasião ou o que você curte
+            beber — a gente responde com sugestões da loja. Também
+            atendemos por encomenda pra eventos e presentes.
           </p>
 
           <dl class="contact__details">
@@ -225,7 +199,7 @@
             <label for="message">O que você procura?</label>
             <textarea id="message" name="message" rows="4" required></textarea>
           </div>
-          <button type="submit" class="cta cta--block">Enviar mensagem</button>
+          <button type="submit" class="cta cta--block">Enviar</button>
           <p class="contact__feedback" id="contact-feedback" role="status"></p>
         </form>
       </section>
