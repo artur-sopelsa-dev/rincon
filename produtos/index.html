@@ -37,6 +37,10 @@
             target="_blank"
             rel="noopener"
           >Instagram</a>
+          <a href="../carrinho.html" class="rail__cart">
+            Carrinho
+            <span class="rail__cart-badge" id="cart-count" hidden>0</span>
+          </a>
         </nav>
 
         <button
@@ -62,57 +66,75 @@
           </p>
 
           <div class="product-grid">
-            <a class="product-card" href="don-melchor.html">
-              <svg class="product-card__bottle" viewBox="0 0 140 380" role="img" aria-label="Ilustração de uma garrafa de vinho (imagem provisória)">
-                <path
-                  d="M60,8 L80,8 L80,84 C80,94 95,104 108,138 C118,163 120,178 120,198
-                     L120,318 C120,334 107,346 92,346 L48,346 C33,346 20,334 20,318
-                     L20,198 C20,178 22,163 32,138 C45,104 60,94 60,84 Z"
-                  fill="none" stroke="rgba(201,162,75,0.5)" stroke-width="1.5" />
-                <rect x="52" y="4" width="36" height="10" rx="2" fill="rgba(201,162,75,0.5)" />
-              </svg>
-              <p class="wine-card__type">Cabernet Sauvignon · Chile</p>
-              <h3 class="wine-card__name">Don Melchor</h3>
-              <p class="wine-card__note">
-                Um clássico chileno, sempre entre os mais premiados da
-                América do Sul.
-              </p>
-              <span class="product-card__link">Ver produto →</span>
-            </a>
+            <article class="product-card">
+              <a class="product-card__link-wrap" href="don-melchor.html">
+                <svg class="product-card__bottle" viewBox="0 0 140 380" role="img" aria-label="Ilustração de uma garrafa de vinho (imagem provisória)">
+                  <path
+                    d="M60,8 L80,8 L80,84 C80,94 95,104 108,138 C118,163 120,178 120,198
+                       L120,318 C120,334 107,346 92,346 L48,346 C33,346 20,334 20,318
+                       L20,198 C20,178 22,163 32,138 C45,104 60,94 60,84 Z"
+                    fill="none" stroke="rgba(201,162,75,0.5)" stroke-width="1.5" />
+                  <rect x="52" y="4" width="36" height="10" rx="2" fill="rgba(201,162,75,0.5)" />
+                </svg>
+                <p class="wine-card__type">Cabernet Sauvignon · Chile</p>
+                <h3 class="wine-card__name">Don Melchor</h3>
+                <p class="wine-card__note">
+                  Um clássico chileno, sempre entre os mais premiados da
+                  América do Sul.
+                </p>
+              </a>
+              <p class="product-card__price">R$ 549,90</p>
+              <div class="product-card__actions">
+                <button type="button" class="link-underline product-card__add" data-add-to-cart="don-melchor">Adicionar ao carrinho</button>
+                <a class="product-card__link" href="don-melchor.html">Ver produto →</a>
+              </div>
+            </article>
 
-            <a class="product-card" href="finca-ambrosia.html">
-              <svg class="product-card__bottle" viewBox="0 0 140 380" role="img" aria-label="Ilustração de uma garrafa de vinho (imagem provisória)">
-                <path
-                  d="M60,8 L80,8 L80,84 C80,94 95,104 108,138 C118,163 120,178 120,198
-                     L120,318 C120,334 107,346 92,346 L48,346 C33,346 20,334 20,318
-                     L20,198 C20,178 22,163 32,138 C45,104 60,94 60,84 Z"
-                  fill="none" stroke="rgba(201,162,75,0.5)" stroke-width="1.5" />
-                <rect x="52" y="4" width="36" height="10" rx="2" fill="rgba(201,162,75,0.5)" />
-              </svg>
-              <p class="wine-card__type">Malbec · Mendoza, Argentina</p>
-              <h3 class="wine-card__name">Finca Ambrosía</h3>
-              <p class="wine-card__note">
-                Malbec de altitude, da Cordilheira dos Andes.
-              </p>
-              <span class="product-card__link">Ver produto →</span>
-            </a>
+            <article class="product-card">
+              <a class="product-card__link-wrap" href="finca-ambrosia.html">
+                <svg class="product-card__bottle" viewBox="0 0 140 380" role="img" aria-label="Ilustração de uma garrafa de vinho (imagem provisória)">
+                  <path
+                    d="M60,8 L80,8 L80,84 C80,94 95,104 108,138 C118,163 120,178 120,198
+                       L120,318 C120,334 107,346 92,346 L48,346 C33,346 20,334 20,318
+                       L20,198 C20,178 22,163 32,138 C45,104 60,94 60,84 Z"
+                    fill="none" stroke="rgba(201,162,75,0.5)" stroke-width="1.5" />
+                  <rect x="52" y="4" width="36" height="10" rx="2" fill="rgba(201,162,75,0.5)" />
+                </svg>
+                <p class="wine-card__type">Malbec · Mendoza, Argentina</p>
+                <h3 class="wine-card__name">Finca Ambrosía</h3>
+                <p class="wine-card__note">
+                  Malbec de altitude, da Cordilheira dos Andes.
+                </p>
+              </a>
+              <p class="product-card__price">R$ 189,90</p>
+              <div class="product-card__actions">
+                <button type="button" class="link-underline product-card__add" data-add-to-cart="finca-ambrosia">Adicionar ao carrinho</button>
+                <a class="product-card__link" href="finca-ambrosia.html">Ver produto →</a>
+              </div>
+            </article>
 
-            <a class="product-card" href="anaia.html">
-              <svg class="product-card__bottle" viewBox="0 0 140 380" role="img" aria-label="Ilustração de uma garrafa de vinho (imagem provisória)">
-                <path
-                  d="M60,8 L80,8 L80,84 C80,94 95,104 108,138 C118,163 120,178 120,198
-                     L120,318 C120,334 107,346 92,346 L48,346 C33,346 20,334 20,318
-                     L20,198 C20,178 22,163 32,138 C45,104 60,94 60,84 Z"
-                  fill="none" stroke="rgba(201,162,75,0.5)" stroke-width="1.5" />
-                <rect x="52" y="4" width="36" height="10" rx="2" fill="rgba(201,162,75,0.5)" />
-              </svg>
-              <p class="wine-card__type">Malbec · Agrelo, Argentina</p>
-              <h3 class="wine-card__name">Anaia</h3>
-              <p class="wine-card__note">
-                Descoberta recente que já virou fixa por aqui.
-              </p>
-              <span class="product-card__link">Ver produto →</span>
-            </a>
+            <article class="product-card">
+              <a class="product-card__link-wrap" href="anaia.html">
+                <svg class="product-card__bottle" viewBox="0 0 140 380" role="img" aria-label="Ilustração de uma garrafa de vinho (imagem provisória)">
+                  <path
+                    d="M60,8 L80,8 L80,84 C80,94 95,104 108,138 C118,163 120,178 120,198
+                       L120,318 C120,334 107,346 92,346 L48,346 C33,346 20,334 20,318
+                       L20,198 C20,178 22,163 32,138 C45,104 60,94 60,84 Z"
+                    fill="none" stroke="rgba(201,162,75,0.5)" stroke-width="1.5" />
+                  <rect x="52" y="4" width="36" height="10" rx="2" fill="rgba(201,162,75,0.5)" />
+                </svg>
+                <p class="wine-card__type">Malbec · Agrelo, Argentina</p>
+                <h3 class="wine-card__name">Anaia</h3>
+                <p class="wine-card__note">
+                  Descoberta recente que já virou fixa por aqui.
+                </p>
+              </a>
+              <p class="product-card__price">R$ 149,90</p>
+              <div class="product-card__actions">
+                <button type="button" class="link-underline product-card__add" data-add-to-cart="anaia">Adicionar ao carrinho</button>
+                <a class="product-card__link" href="anaia.html">Ver produto →</a>
+              </div>
+            </article>
           </div>
         </section>
       </main>

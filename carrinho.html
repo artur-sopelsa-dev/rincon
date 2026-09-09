@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrinho — Rincón del Vino</title>
+    <meta name="description" content="Seu pedido na Rincón del Vino." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500,600&family=Jost:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="rail" id="rail">
+        <a href="index.html#topo" class="rail__logo" aria-label="Rincón del Vino">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+            <path d="M12 21c0-6 1-9 6-13-6 0-9 2-9 8 0-5-3-8-7-8 3 4 3 9 6 13" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M12 21V12" stroke-linecap="round" />
+          </svg>
+        </a>
+
+        <nav class="rail__nav" id="nav-links">
+          <a href="index.html#curadoria"><span class="rail__num">01</span>Curadoria</a>
+          <a href="produtos/"><span class="rail__num">02</span>Seleção</a>
+          <a href="index.html#editorial"><span class="rail__num">03</span>Editorial</a>
+          <a href="index.html#contato"><span class="rail__num">04</span>Contato</a>
+          <a
+            class="rail__nav-social"
+            href="https://www.instagram.com/rincondelvino.arg/"
+            target="_blank"
+            rel="noopener"
+          >Instagram</a>
+          <a href="carrinho.html" class="rail__cart is-current">
+            Carrinho
+            <span class="rail__cart-badge" id="cart-count" hidden>0</span>
+          </a>
+        </nav>
+
+        <button
+          class="rail__toggle"
+          id="nav-toggle"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </aside>
+
+      <main class="content">
+        <section class="block">
+          <span class="block__index" aria-hidden="true">•</span>
+          <h2 class="block__title">Seu carrinho</h2>
+          <p class="body-copy">
+            Confirma os rótulos e a quantidade, depois é só enviar o
+            pedido — a gente combina o pagamento e a retirada por
+            WhatsApp.
+          </p>
+          <p class="pickup-note">
+            * A gente não faz entrega. A compra é combinada por aqui, mas
+            o produto precisa ser retirado na loja.
+          </p>
+
+          <p class="cart-empty" id="cart-empty" hidden>
+            Seu carrinho está vazio.
+            <a href="produtos/" class="link-underline">Ver produtos →</a>
+          </p>
+
+          <ul class="cart-list" id="cart-list"></ul>
+
+          <div class="cart-summary">
+            <p class="cart-summary__total">
+              Total: <strong id="cart-total">R$ 0,00</strong>
+            </p>
+            <a
+              href="#"
+              id="cart-checkout"
+              class="cta"
+              target="_blank"
+              rel="noopener"
+            >Enviar pedido no WhatsApp →</a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <p class="footer__wordmark">Rincón del vino</p>
+      <nav class="footer__links">
+        <a href="index.html#curadoria">Curadoria</a>
+        <a href="produtos/">Seleção</a>
+        <a href="index.html#editorial">Editorial</a>
+        <a href="index.html#contato">Contato</a>
+      </nav>
+      <p class="footer__copy">
+        © <span id="year"></span> Rincón del Vino. Todos os direitos
+        reservados.
+      </p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
