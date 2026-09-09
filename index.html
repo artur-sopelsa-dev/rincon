@@ -11,32 +11,36 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500,600&family=Jost:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <header class="nav" id="nav">
-      <div class="nav__inner">
-        <a href="#topo" class="nav__logo">
-          <svg class="nav__logo-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+    <div class="shell">
+      <aside class="rail" id="rail">
+        <a href="#topo" class="rail__logo" aria-label="Rincón del Vino">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
             <path d="M12 21c0-6 1-9 6-13-6 0-9 2-9 8 0-5-3-8-7-8 3 4 3 9 6 13" stroke-linecap="round" stroke-linejoin="round" />
             <path d="M12 21V12" stroke-linecap="round" />
           </svg>
-          Rincón <span class="nav__logo-sub">del vino</span>
         </a>
 
-        <nav class="nav__links" id="nav-links">
-          <a href="#curadoria">Curadoria</a>
-          <a href="#colecao">Seleção</a>
-          <a href="#contato">Contato</a>
+        <nav class="rail__nav" id="nav-links">
+          <a href="#curadoria"><span class="rail__num">01</span>Curadoria</a>
+          <a href="#colecao"><span class="rail__num">02</span>Seleção</a>
+          <a href="#editorial"><span class="rail__num">03</span>Editorial</a>
+          <a href="#contato"><span class="rail__num">04</span>Contato</a>
+          <a
+            class="rail__nav-social"
+            href="https://www.instagram.com/rincondelvino.arg/"
+            target="_blank"
+            rel="noopener"
+          >Instagram</a>
         </nav>
 
-        <a href="#contato" class="nav__cta">Pedir recomendação</a>
-
         <button
-          class="nav__toggle"
+          class="rail__toggle"
           id="nav-toggle"
           aria-label="Abrir menu"
           aria-expanded="false"
@@ -46,217 +50,182 @@
           <span></span>
           <span></span>
         </button>
-      </div>
-    </header>
+      </aside>
 
-    <main>
-      <section class="hero" id="topo">
-        <p class="hero__kicker">Vinhos que contam histórias</p>
-        <h1 class="hero__headline">
-          A gente bebe antes<br />
-          de vender pra você.
-        </h1>
-        <p class="hero__sub">
-          Rótulos de vinícolas pequenas da Argentina e do Chile — cada um
-          provado na adega antes de entrar na seleção.
-        </p>
-        <div class="hero__actions">
-          <a href="#colecao" class="cta">Ver os rótulos</a>
-          <a href="#contato" class="link-underline">Fale com a gente →</a>
-        </div>
-      </section>
-
-      <section class="philosophy" id="curadoria">
-        <div class="philosophy__text">
-          <h2 class="section-title">Como a gente escolhe o que vende</h2>
-          <p class="body-copy">
-            A gente visita o produtor, senta na adega e prova a safra antes
-            de decidir se o rótulo entra na seleção. Se não é algo que a
-            gente compraria de novo com o próprio dinheiro, a gente não
-            vende.
-          </p>
-          <p class="body-copy">
-            Por isso a lista é curta: menos rótulo, mais atenção em cada
-            um.
-          </p>
-        </div>
-
-        <div class="philosophy__figure">
-          <div class="bottle-scene" aria-hidden="true">
-            <span class="bottle-scene__swirl bottle-scene__swirl--1"></span>
-            <span class="bottle-scene__swirl bottle-scene__swirl--2"></span>
-            <span class="bottle-scene__swirl bottle-scene__swirl--3"></span>
-            <svg
-              class="bottle-scene__bottle"
-              viewBox="0 0 140 380"
-              role="img"
-              aria-label="Ilustração de uma garrafa de vinho"
-            >
-              <defs>
-                <linearGradient id="bottleGlass" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stop-color="#0d0a06" />
-                  <stop offset="45%" stop-color="#241608" />
-                  <stop offset="55%" stop-color="#241608" />
-                  <stop offset="100%" stop-color="#0d0a06" />
-                </linearGradient>
-              </defs>
-              <path
-                d="M60,8 L80,8 L80,84 C80,94 95,104 108,138 C118,163 120,178 120,198
-                   L120,318 C120,334 107,346 92,346 L48,346 C33,346 20,334 20,318
-                   L20,198 C20,178 22,163 32,138 C45,104 60,94 60,84 Z"
-                fill="url(#bottleGlass)"
-                stroke="rgba(201,162,75,0.35)"
-                stroke-width="1.5"
-              />
-              <rect x="52" y="4" width="36" height="10" rx="2" fill="#c9a24b" opacity="0.85" />
-            </svg>
-          </div>
-          <p class="philosophy__caption">Provado, garrafa a garrafa.</p>
-        </div>
-      </section>
-
-      <section class="stats">
-        <div class="stats__grid">
-          <div class="stat">
-            <p class="stat__number">80+</p>
-            <p class="stat__label">Rótulos na seleção</p>
-          </div>
-          <div class="stat">
-            <p class="stat__number">4</p>
-            <p class="stat__label">Países de origem</p>
-          </div>
-          <div class="stat">
-            <p class="stat__number">10&nbsp;anos</p>
-            <p class="stat__label">Escolhendo vinícolas</p>
-          </div>
-          <div class="stat">
-            <p class="stat__number">100%</p>
-            <p class="stat__label">Provado antes de vender</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="collection" id="colecao">
-        <h2 class="section-title collection__title">O que tá na loja agora</h2>
-
-        <div class="collection__grid">
-          <article class="wine-card">
-            <p class="wine-card__type">Malbec · Mendoza, Argentina</p>
-            <h3 class="wine-card__name">Finca Ambrosía</h3>
-            <p class="wine-card__note">
-              Malbec de altitude, da Cordilheira dos Andes. Boa estrutura
-              pra quem quer guardar.
-            </p>
-            <a href="#contato" class="wine-card__link">Consultar disponibilidade →</a>
-          </article>
-
-          <article class="wine-card">
-            <p class="wine-card__type">Cabernet Sauvignon · Chile</p>
-            <h3 class="wine-card__name">Don Melchor</h3>
-            <p class="wine-card__note">
-              Um clássico chileno, sempre entre os mais premiados da
-              América do Sul.
-            </p>
-            <a href="#contato" class="wine-card__link">Consultar disponibilidade →</a>
-          </article>
-
-          <article class="wine-card">
-            <p class="wine-card__type">Malbec · Agrelo, Argentina</p>
-            <h3 class="wine-card__name">Anaia</h3>
-            <p class="wine-card__note">
-              Vinícola pequena de Agrelo — descoberta recente que já virou
-              fixa por aqui.
-            </p>
-            <a href="#contato" class="wine-card__link">Consultar disponibilidade →</a>
-          </article>
-        </div>
-      </section>
-
-      <section class="editorial">
-        <div class="editorial__inner">
-          <h2 class="section-title">A gente também escreve sobre o que tá na taça</h2>
-          <p class="body-copy">
-            No Instagram a gente conta de onde vem cada rótulo, quem faz e
-            por que ele entrou na seleção — sem forçar a barra em cima de
-            terroir.
-          </p>
-          <a
-            href="https://www.instagram.com/rincondelvino.arg/"
-            class="link-underline"
-            target="_blank"
-            rel="noopener"
-          >Ver no Instagram →</a>
-        </div>
-      </section>
-
-      <section class="contact" id="contato">
-        <div class="contact__info">
-          <h2 class="section-title">Quer uma indicação?</h2>
-          <p class="body-copy">
-            Manda uma mensagem contando a ocasião ou o que você curte
-            beber — a gente responde com sugestões da loja. Também
-            atendemos por encomenda pra eventos e presentes.
-          </p>
-
-          <dl class="contact__details">
-            <div>
-              <dt>Instagram</dt>
-              <dd><a href="https://www.instagram.com/rincondelvino.arg/" target="_blank" rel="noopener">@rincondelvino.arg</a></dd>
+      <main class="content">
+        <section class="hero" id="topo">
+          <div class="hero__main">
+            <p class="hero__kicker">Vinhos que contam histórias</p>
+            <h1 class="hero__headline">
+              A gente bebe<br />
+              antes de vender<br />
+              pra você.
+            </h1>
+            <div class="hero__actions">
+              <a href="#colecao" class="cta">Ver os rótulos</a>
+              <a href="#contato" class="link-underline">Fale com a gente →</a>
             </div>
-            <div>
-              <dt>E-mail</dt>
-              <dd><a href="mailto:contato@rincondelvino.com">contato@rincondelvino.com</a></dd>
-            </div>
-          </dl>
-          <p class="contact__note">
-            * Dados de contato ilustrativos — substituir pelos reais antes
-            de publicar.
-          </p>
-        </div>
+          </div>
 
-        <form class="contact__form" id="contact-form" novalidate>
-          <div class="field">
-            <label for="name">Nome</label>
-            <input type="text" id="name" name="name" required />
+          <aside class="hero__panel">
+            <p class="hero__panel-number">80+</p>
+            <p class="hero__panel-label">
+              Rótulos de vinícolas pequenas, de 4 países — cada um provado
+              na adega antes de entrar na seleção.
+            </p>
+          </aside>
+        </section>
+
+        <section class="block" id="curadoria">
+          <span class="block__index" aria-hidden="true">01</span>
+          <div class="block__grid">
+            <h2 class="block__title">Como a gente escolhe o que vende</h2>
+
+            <div class="block__copy">
+              <p class="body-copy">
+                A gente visita o produtor, senta na adega e prova a safra
+                antes de decidir se o rótulo entra na seleção. Se não é
+                algo que a gente compraria de novo com o próprio dinheiro,
+                a gente não vende.
+              </p>
+              <p class="body-copy">
+                Por isso a lista é curta: menos rótulo, mais atenção em
+                cada um.
+              </p>
+            </div>
+
+            <ul class="fact-list">
+              <li>
+                <p class="fact-list__label">Adega</p>
+                <p class="fact-list__text">Provamos direto na fonte, antes de qualquer negociação.</p>
+              </li>
+              <li>
+                <p class="fact-list__label">Critério</p>
+                <p class="fact-list__text">Só entra o que a gente compraria de novo.</p>
+              </li>
+              <li>
+                <p class="fact-list__label">Lista</p>
+                <p class="fact-list__text">Curta de propósito — menos rótulo, mais atenção.</p>
+              </li>
+            </ul>
           </div>
-          <div class="field">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required />
+        </section>
+
+        <section class="block" id="colecao">
+          <span class="block__index" aria-hidden="true">02</span>
+          <h2 class="block__title">O que tá na loja agora</h2>
+
+          <div class="bento">
+            <article class="bento__item bento__item--feature">
+              <p class="wine-card__type">Cabernet Sauvignon · Chile</p>
+              <h3 class="wine-card__name">Don Melchor</h3>
+              <p class="wine-card__note">
+                Um clássico chileno, sempre entre os mais premiados da
+                América do Sul.
+              </p>
+              <a href="#contato" class="wine-card__link">Consultar disponibilidade →</a>
+            </article>
+
+            <article class="bento__item">
+              <p class="wine-card__type">Malbec · Mendoza, Argentina</p>
+              <h3 class="wine-card__name">Finca Ambrosía</h3>
+              <p class="wine-card__note">
+                Malbec de altitude, da Cordilheira dos Andes.
+              </p>
+              <a href="#contato" class="wine-card__link">Consultar →</a>
+            </article>
+
+            <article class="bento__item">
+              <p class="wine-card__type">Malbec · Agrelo, Argentina</p>
+              <h3 class="wine-card__name">Anaia</h3>
+              <p class="wine-card__note">
+                Descoberta recente que já virou fixa por aqui.
+              </p>
+              <a href="#contato" class="wine-card__link">Consultar →</a>
+            </article>
+
+            <a href="#contato" class="bento__item bento__item--cta">
+              <p class="wine-card__type">Não achou o rótulo certo?</p>
+              <h3 class="wine-card__name">Fale com a gente</h3>
+              <p class="wine-card__note">A gente sugere algo da seleção pra você →</p>
+            </a>
           </div>
-          <div class="field">
-            <label for="message">O que você procura?</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
+        </section>
+
+        <section class="block block--invert" id="editorial">
+          <span class="block__index" aria-hidden="true">03</span>
+          <div class="block__grid block__grid--narrow">
+            <h2 class="block__title">A gente também escreve sobre o que tá na taça</h2>
+            <p class="body-copy">
+              No Instagram a gente conta de onde vem cada rótulo, quem faz
+              e por que ele entrou na seleção — sem forçar a barra em cima
+              de terroir.
+            </p>
+            <a
+              href="https://www.instagram.com/rincondelvino.arg/"
+              class="link-underline"
+              target="_blank"
+              rel="noopener"
+            >Ver no Instagram →</a>
           </div>
-          <button type="submit" class="cta cta--block">Enviar</button>
-          <p class="contact__feedback" id="contact-feedback" role="status"></p>
-        </form>
-      </section>
-    </main>
+        </section>
+
+        <section class="block" id="contato">
+          <span class="block__index" aria-hidden="true">04</span>
+          <div class="contact-grid">
+            <div class="contact__info">
+              <h2 class="block__title">Quer uma indicação?</h2>
+              <p class="body-copy">
+                Manda uma mensagem contando a ocasião ou o que você curte
+                beber — a gente responde com sugestões da loja. Também
+                atendemos por encomenda pra eventos e presentes.
+              </p>
+
+              <dl class="contact__details">
+                <div>
+                  <dt>Instagram</dt>
+                  <dd><a href="https://www.instagram.com/rincondelvino.arg/" target="_blank" rel="noopener">@rincondelvino.arg</a></dd>
+                </div>
+                <div>
+                  <dt>E-mail</dt>
+                  <dd><a href="mailto:contato@rincondelvino.com">contato@rincondelvino.com</a></dd>
+                </div>
+              </dl>
+              <p class="contact__note">
+                * Dados de contato ilustrativos — substituir pelos reais
+                antes de publicar.
+              </p>
+            </div>
+
+            <form class="contact__form" id="contact-form" novalidate>
+              <div class="field">
+                <label for="name">Nome</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div class="field">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="field">
+                <label for="message">O que você procura?</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+              </div>
+              <button type="submit" class="cta cta--block">Enviar</button>
+              <p class="contact__feedback" id="contact-feedback" role="status"></p>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
 
     <footer class="footer">
-      <div class="footer__inner">
-        <div class="footer__brand">
-          <a href="#topo" class="nav__logo">
-            <svg class="nav__logo-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
-              <path d="M12 21c0-6 1-9 6-13-6 0-9 2-9 8 0-5-3-8-7-8 3 4 3 9 6 13" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M12 21V12" stroke-linecap="round" />
-            </svg>
-            Rincón <span class="nav__logo-sub">del vino</span>
-          </a>
-          <p class="footer__tagline">Vinhos que contam histórias.</p>
-        </div>
-
-        <nav class="footer__links">
-          <a href="#curadoria">Curadoria</a>
-          <a href="#colecao">Seleção</a>
-          <a href="#contato">Contato</a>
-        </nav>
-
-        <div class="footer__social">
-          <a href="https://www.instagram.com/rincondelvino.arg/" target="_blank" rel="noopener">Instagram</a>
-        </div>
-      </div>
-
+      <p class="footer__wordmark">Rincón del vino</p>
+      <nav class="footer__links">
+        <a href="#curadoria">Curadoria</a>
+        <a href="#colecao">Seleção</a>
+        <a href="#editorial">Editorial</a>
+        <a href="#contato">Contato</a>
+      </nav>
       <p class="footer__copy">
         © <span id="year"></span> Rincón del Vino. Todos os direitos
         reservados.

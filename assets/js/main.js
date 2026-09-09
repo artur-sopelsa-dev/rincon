@@ -1,29 +1,21 @@
-// -------------------- Nav: scrolled background + mobile toggle --------------------
+// -------------------- Rail: mobile menu toggle --------------------
 (function () {
-  var nav = document.getElementById("nav");
+  var rail = document.getElementById("rail");
   var toggle = document.getElementById("nav-toggle");
   var links = document.getElementById("nav-links");
-  if (!nav) return;
+  if (!rail || !toggle || !links) return;
 
-  function onScroll() {
-    nav.classList.toggle("is-scrolled", window.scrollY > 24);
-  }
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
+  toggle.addEventListener("click", function () {
+    var isOpen = rail.classList.toggle("is-open");
+    toggle.setAttribute("aria-expanded", String(isOpen));
+  });
 
-  if (toggle && links) {
-    toggle.addEventListener("click", function () {
-      var isOpen = nav.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", String(isOpen));
+  links.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      rail.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
     });
-
-    links.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        nav.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-      });
-    });
-  }
+  });
 })();
 
 // -------------------- Contact form (no backend: UI-only confirmation) --------------------
