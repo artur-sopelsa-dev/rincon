@@ -153,7 +153,7 @@ a {
   height: 17px;
   padding: 0 4px;
   border-radius: 999px;
-  background: var(--wine);
+  background: #d6455a;
   color: var(--cream);
   font-size: 0.64rem;
   font-weight: 600;
