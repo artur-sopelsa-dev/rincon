@@ -256,9 +256,79 @@ main > section {
   text-align: center;
 }
 
-.philosophy__figure img {
-  width: min(100%, 360px);
-  filter: drop-shadow(14px 20px 24px rgba(0, 0, 0, 0.5));
+.bottle-scene {
+  position: relative;
+  width: min(100%, 300px);
+  height: 380px;
+  margin: 0 auto;
+}
+
+.bottle-scene__bottle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: auto;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(10px 18px 22px rgba(0, 0, 0, 0.55));
+  z-index: 2;
+}
+
+.bottle-scene__swirl {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 130px;
+  height: 46px;
+  margin: -23px 0 0 -65px;
+  border-radius: 50%;
+  filter: blur(3px);
+  offset-rotate: auto;
+  z-index: 1;
+  animation: orbit linear infinite;
+}
+
+.bottle-scene__swirl--1 {
+  background: radial-gradient(ellipse at center, rgba(214, 48, 74, 0.95) 0%, rgba(214, 48, 74, 0.55) 45%, rgba(214, 48, 74, 0) 78%);
+  offset-path: ellipse(78px 158px at center);
+  animation-duration: 9s;
+}
+
+.bottle-scene__swirl--2 {
+  width: 96px;
+  height: 34px;
+  margin: -17px 0 0 -48px;
+  background: radial-gradient(ellipse at center, rgba(226, 181, 98, 0.85) 0%, rgba(226, 181, 98, 0.4) 45%, rgba(226, 181, 98, 0) 78%);
+  offset-path: ellipse(92px 138px at center);
+  animation-duration: 13s;
+  animation-direction: reverse;
+  opacity: 0.85;
+}
+
+.bottle-scene__swirl--3 {
+  width: 108px;
+  height: 38px;
+  margin: -19px 0 0 -54px;
+  background: radial-gradient(ellipse at center, rgba(150, 24, 52, 0.9) 0%, rgba(150, 24, 52, 0.5) 45%, rgba(150, 24, 52, 0) 78%);
+  offset-path: ellipse(68px 172px at center);
+  animation-duration: 15.5s;
+  opacity: 0.75;
+}
+
+@keyframes orbit {
+  from {
+    offset-distance: 0%;
+  }
+  to {
+    offset-distance: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bottle-scene__swirl {
+    animation: none;
+    offset-distance: 30%;
+  }
 }
 
 .philosophy__caption {

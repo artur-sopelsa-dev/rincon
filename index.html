@@ -82,8 +82,36 @@
         </div>
 
         <div class="philosophy__figure">
-          <img src="assets/img/grapes.webp" alt="Cacho de uvas tintas" />
-          <p class="philosophy__caption">Onde a seleção começa.</p>
+          <div class="bottle-scene" aria-hidden="true">
+            <span class="bottle-scene__swirl bottle-scene__swirl--1"></span>
+            <span class="bottle-scene__swirl bottle-scene__swirl--2"></span>
+            <span class="bottle-scene__swirl bottle-scene__swirl--3"></span>
+            <svg
+              class="bottle-scene__bottle"
+              viewBox="0 0 140 380"
+              role="img"
+              aria-label="Ilustração de uma garrafa de vinho"
+            >
+              <defs>
+                <linearGradient id="bottleGlass" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#0d0a06" />
+                  <stop offset="45%" stop-color="#241608" />
+                  <stop offset="55%" stop-color="#241608" />
+                  <stop offset="100%" stop-color="#0d0a06" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M60,8 L80,8 L80,84 C80,94 95,104 108,138 C118,163 120,178 120,198
+                   L120,318 C120,334 107,346 92,346 L48,346 C33,346 20,334 20,318
+                   L20,198 C20,178 22,163 32,138 C45,104 60,94 60,84 Z"
+                fill="url(#bottleGlass)"
+                stroke="rgba(201,162,75,0.35)"
+                stroke-width="1.5"
+              />
+              <rect x="52" y="4" width="36" height="10" rx="2" fill="#c9a24b" opacity="0.85" />
+            </svg>
+          </div>
+          <p class="philosophy__caption">Provado, garrafa a garrafa.</p>
         </div>
       </section>
 
