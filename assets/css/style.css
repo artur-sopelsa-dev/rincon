@@ -295,8 +295,8 @@ a {
   color: rgba(242, 233, 221, 0.72);
 }
 
-.block--invert .body-copy {
-  color: rgba(24, 15, 9, 0.7);
+.block--banner .body-copy {
+  color: rgba(242, 233, 221, 0.8);
 }
 
 .block__grid {
@@ -693,29 +693,24 @@ a {
   font-size: 1.3rem;
 }
 
-/* -------------------- Invert (light) section -------------------- */
+/* -------------------- Banner (photo background) section -------------------- */
 
-.block--invert {
-  background: var(--cream);
-  color: var(--bg);
-}
-
-.block--invert .block__index {
-  -webkit-text-stroke: 1px rgba(24, 15, 9, 0.25);
-}
-
-.block--invert .block__title {
-  color: var(--bg);
-}
-
-.block--invert .link-underline {
-  color: var(--bg);
-  border-color: rgba(24, 15, 9, 0.35);
-}
-
-.block--invert .link-underline:hover {
-  color: var(--wine);
-  border-color: var(--wine);
+.block--banner {
+  position: relative;
+  min-height: 62vh;
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(
+      90deg,
+      rgba(14, 9, 8, 0.9) 0%,
+      rgba(14, 9, 8, 0.62) 36%,
+      rgba(14, 9, 8, 0.18) 62%,
+      rgba(14, 9, 8, 0.05) 100%
+    ),
+    url("../img/editorial-banner.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* -------------------- Cart page -------------------- */
