@@ -1,15 +1,20 @@
 :root {
-  --bg: #0e0908;
+  --bg: #180f09;
+  --brown: #3a2415;
   --wine: #7a1530;
   --gold: #c9a24b;
   --cream: #f2e9dd;
+  --rail-w: 88px;
 }
 
 * {
   box-sizing: border-box;
 }
 
-html,
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -19,63 +24,220 @@ body {
   overflow-x: hidden;
 }
 
-.hero {
-  position: relative;
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+img {
+  max-width: 100%;
+}
+
+a {
+  transition: color 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+}
+
+/* -------------------- Rail (sidebar nav) -------------------- */
+
+.shell {
+  display: flex;
+}
+
+.rail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--rail-w);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 2rem;
-  padding: 5vh 6vw;
-  isolation: isolate;
+  gap: 2.5rem;
+  padding: 1.6rem 0 1.8rem;
+  background: var(--bg);
+  border-right: 1px solid rgba(201, 162, 75, 0.16);
 }
 
-.hero__bg-glow {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background:
-    radial-gradient(48% 60% at 70% 45%, rgba(122, 21, 48, 0.55), transparent 70%),
-    radial-gradient(30% 40% at 15% 20%, rgba(201, 162, 75, 0.08), transparent 70%);
-  pointer-events: none;
+.rail__logo {
+  color: var(--gold);
+  display: flex;
 }
 
-/* -------------------- Copy -------------------- */
-
-.hero__content {
-  position: relative;
-  z-index: 2;
-  max-width: 30rem;
+.rail__logo svg {
+  width: 22px;
+  height: 22px;
 }
 
-.eyebrow {
-  margin: 0 0 1.1rem;
-  font-size: 0.78rem;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
+.rail__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.rail__nav a {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: rgba(242, 233, 221, 0.65);
+  text-decoration: none;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+}
+
+.rail__nav a:hover,
+.rail__nav a.is-current {
   color: var(--gold);
 }
 
-.headline {
-  margin: 0 0 1.4rem;
+.rail__right {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.rail__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  color: rgba(242, 233, 221, 0.55);
+  transition: color 0.15s ease;
+}
+
+.rail__icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.rail__icon:hover {
+  color: var(--gold);
+}
+
+.rail__icon--cart {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+}
+
+.rail__icon--cart svg {
+  width: 19px;
+  height: 19px;
+}
+
+.rail__icon--cart:hover,
+.rail__icon--cart.is-current {
+  background: var(--gold);
+  color: var(--bg);
+}
+
+.rail__cart-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 17px;
+  height: 17px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: #d6455a;
+  color: var(--cream);
+  font-size: 0.64rem;
+  font-weight: 600;
+  border: 1px solid var(--bg);
+}
+
+.rail__cart-badge[hidden] {
+  display: none;
+}
+
+.rail__toggle {
+  display: none;
+}
+
+.content {
+  margin-left: var(--rail-w);
+  width: calc(100% - var(--rail-w));
+}
+
+/* -------------------- Hero -------------------- */
+
+.hero {
+  min-height: 92vh;
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 4vw;
+  align-items: center;
+  padding: 6vh 5vw;
+  background: radial-gradient(55% 45% at 20% 15%, rgba(139, 79, 26, 0.28), transparent 70%);
+}
+
+.hero__main {
+  max-width: 40rem;
+}
+
+.hero__kicker {
+  margin: 0 0 1.2rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--gold);
+}
+
+.hero__headline {
+  margin: 0 0 1.6rem;
   font-family: "Cormorant Garamond", Georgia, serif;
   font-weight: 500;
-  font-size: clamp(2.6rem, 5vw, 4.4rem);
-  line-height: 1.05;
+  font-size: clamp(3rem, 7vw, 5.6rem);
+  line-height: 1.02;
   color: var(--cream);
 }
 
-.headline em {
-  font-style: italic;
-  color: var(--gold);
+.hero__panel {
+  border-left: 1px solid rgba(201, 162, 75, 0.35);
+  padding-left: 2.2rem;
 }
 
-.subcopy {
-  margin: 0 0 2.2rem;
-  max-width: 26rem;
-  font-size: 1.02rem;
-  line-height: 1.7;
-  color: rgba(242, 233, 221, 0.72);
+.hero__panel-number {
+  margin: 0 0 0.8rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(3rem, 6vw, 5rem);
+  color: var(--gold);
+  line-height: 1;
+}
+
+.hero__panel-label {
+  margin: 0;
+  max-width: 20rem;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: rgba(242, 233, 221, 0.68);
+}
+
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.link-underline {
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgba(242, 233, 221, 0.3);
+  padding-bottom: 2px;
+}
+
+.link-underline:hover {
+  color: var(--gold);
+  border-color: var(--gold);
 }
 
 .cta {
@@ -88,7 +250,6 @@ body {
   font-size: 0.82rem;
   text-transform: uppercase;
   border-radius: 2px;
-  transition: background 0.35s ease, color 0.35s ease;
 }
 
 .cta:hover {
@@ -96,165 +257,831 @@ body {
   color: var(--bg);
 }
 
-/* -------------------- Frame -------------------- */
+/* -------------------- Numbered blocks -------------------- */
 
-.frame {
+.block {
   position: relative;
-  z-index: 1;
-  justify-self: center;
-  width: min(34vw, 460px);
-  aspect-ratio: 3 / 4;
-  border: 1px solid rgba(201, 162, 75, 0.55);
-  border-radius: 2px;
-  overflow: visible;
-  perspective: 1200px;
+  padding: 10vh 5vw;
+  border-top: 1px solid rgba(201, 162, 75, 0.14);
 }
 
-.frame::before {
-  content: "";
-  position: absolute;
-  inset: 10px;
-  border: 1px solid rgba(201, 162, 75, 0.22);
-  pointer-events: none;
+.block__title {
+  margin: 0 0 2rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(2rem, 3.6vw, 2.8rem);
+  line-height: 1.15;
+  color: var(--cream);
+  max-width: 26rem;
 }
 
-/* -------------------- Layers -------------------- */
-
-.layer {
-  --px: 0px;
-  --py: 0px;
-  position: absolute;
-  will-change: transform;
-  transition: transform 0.15s ease-out;
-  transform: translate3d(var(--px), var(--py), 0);
+.body-copy {
+  margin: 0 0 1.2rem;
+  max-width: 30rem;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(242, 233, 221, 0.72);
 }
 
-.layer__inner {
-  animation: bob 6.5s ease-in-out infinite;
+.block--banner .body-copy {
+  color: rgba(242, 233, 221, 0.8);
 }
 
-.layer img {
+.block__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3vw;
+  align-items: start;
+}
+
+.block__grid--narrow {
+  grid-template-columns: 1fr;
+  max-width: 40rem;
+}
+
+.block__copy {
+  grid-column: span 1;
+}
+
+/* -------------------- Fact list -------------------- */
+
+.fact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.4rem;
+}
+
+.fact-list li {
+  padding-top: 1.1rem;
+  border-top: 1px solid rgba(201, 162, 75, 0.2);
+}
+
+.fact-list__label {
+  margin: 0 0 0.4rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.fact-list__text {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: rgba(242, 233, 221, 0.68);
+}
+
+/* -------------------- Bento collection grid (pinned catalog) -------------------- */
+
+.catalog {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.catalog__more {
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+.catalog__frame {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8vh 0;
+}
+
+.catalog__track {
+  display: flex;
+  flex-direction: column;
+}
+
+.catalog__step {
+  height: 100vh;
+}
+
+.catalog__dots {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1.6rem;
+}
+
+.catalog__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(201, 162, 75, 0.3);
+}
+
+.catalog__dot.is-active {
+  background: var(--gold);
+}
+
+.catalog__specs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: rgba(242, 233, 221, 0.68);
+}
+
+.catalog__bottle {
+  width: 84px;
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+/* Only the active product's 4 cells participate in the grid */
+.catalog-product {
+  display: none;
+}
+
+.catalog-product.is-active {
+  display: contents;
+}
+
+.bento {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  grid-template-rows: repeat(2, auto);
+  gap: 1px;
+  background: rgba(201, 162, 75, 0.18);
+}
+
+.bento__item {
+  background: var(--bg);
+  padding: 2.2rem 1.9rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.bento__item--feature {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  justify-content: center;
+}
+
+.bento__item--feature .wine-card__name {
+  font-size: 2.2rem;
+}
+
+.bento__item:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.bento__item:nth-child(3) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.bento__item--cta {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--brown);
+}
+
+/* Without JS (or below 921px) show every product stacked, plain, no pinning */
+.catalog:not(.is-active-js) .catalog__frame {
+  position: static;
+  min-height: 0;
+  padding: 0;
+}
+
+.catalog:not(.is-active-js) .catalog__track,
+.catalog:not(.is-active-js) .catalog__dots {
+  display: none;
+}
+
+.catalog:not(.is-active-js) .bento {
   display: block;
+  background: none;
+}
+
+.catalog:not(.is-active-js) .catalog-product {
+  display: block;
+}
+
+.catalog:not(.is-active-js) .catalog-product:not(:last-child) {
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(201, 162, 75, 0.14);
+}
+
+.catalog:not(.is-active-js) .bento__item {
+  padding: 0.6rem 0;
+}
+
+.catalog:not(.is-active-js) .bento__item--cta {
+  align-items: flex-start;
+  text-align: left;
+  background: none;
+}
+
+.wine-card__type {
+  margin: 0 0 0.6rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.wine-card__name {
+  margin: 0 0 0.8rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.5rem;
+  color: var(--cream);
+}
+
+.wine-card__note {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: rgba(242, 233, 221, 0.65);
+}
+
+/* -------------------- Product listing grid -------------------- */
+
+.product-grid {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(201, 162, 75, 0.18);
+}
+
+.product-card {
+  background: var(--bg);
+  padding: 2.6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: background 0.15s ease;
+}
+
+.product-card:hover {
+  background: rgba(58, 36, 21, 0.45);
+}
+
+.product-card__link-wrap {
+  display: contents;
+  color: inherit;
+  text-decoration: none;
+}
+
+.product-card__bottle {
+  width: 56px;
+  height: auto;
+  margin-bottom: 1.6rem;
+}
+
+.product-card .wine-card__note {
+  margin: 0.8rem 0 1.2rem;
+}
+
+.product-card__price {
+  margin: 0 0 1.4rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.3rem;
+  color: var(--gold);
+}
+
+.product-card__actions {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+
+.product-card__add {
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.product-card__link {
+  font-size: 0.8rem;
+  color: var(--gold);
+}
+
+/* -------------------- Product detail page -------------------- */
+
+.product-hero {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 5vw;
+  align-items: center;
+}
+
+.product-hero__media {
+  display: flex;
+  justify-content: center;
+}
+
+.product-hero__media .catalog__bottle {
+  width: min(220px, 100%);
+  margin: 0;
+}
+
+.product-hero__info .wine-card__type {
+  font-size: 0.78rem;
+}
+
+.product-hero__info .block__title {
   max-width: none;
 }
 
-/* Back bokeh grapes: soft, blurred, receding into the frame */
-.layer--back-bokeh {
-  top: -6%;
-  left: -14%;
-  width: 42%;
-  z-index: 0;
-  opacity: 0.55;
+.product-hero__specs {
+  margin: 2rem 0;
+  padding: 1.4rem 0;
+  border-top: 1px solid rgba(201, 162, 75, 0.2);
+  border-bottom: 1px solid rgba(201, 162, 75, 0.2);
 }
 
-.layer--back-bokeh img {
+.product-hero__price {
+  margin: 0 0 1.6rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 2rem;
+  color: var(--gold);
+}
+
+.pickup-note {
+  margin: 1rem 0 0;
+  font-size: 0.78rem;
+  font-style: italic;
+  color: rgba(242, 233, 221, 0.45);
+  max-width: 26rem;
+}
+
+.cta:disabled {
+  opacity: 0.6;
+  cursor: default;
+  background: transparent;
+  color: var(--gold);
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 2.4rem;
+}
+
+.related {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(201, 162, 75, 0.14);
+}
+
+.related__label {
+  margin: 0 0 1.4rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.cross-sell {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: rgba(201, 162, 75, 0.18);
+}
+
+.cross-sell a {
+  background: var(--bg);
+  color: inherit;
+  padding: 1.8rem 1.9rem;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.cross-sell a:hover {
+  background: rgba(58, 36, 21, 0.45);
+}
+
+.cross-sell .wine-card__type {
+  font-size: 0.68rem;
+}
+
+.cross-sell .wine-card__name {
+  font-size: 1.3rem;
+}
+
+/* -------------------- Banner (photo background) section -------------------- */
+
+.block--banner {
+  position: relative;
+  min-height: 62vh;
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(
+      90deg,
+      rgba(14, 9, 8, 0.9) 0%,
+      rgba(14, 9, 8, 0.62) 36%,
+      rgba(14, 9, 8, 0.18) 62%,
+      rgba(14, 9, 8, 0.05) 100%
+    ),
+    url("../img/editorial-banner.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* -------------------- Cart page -------------------- */
+
+.cart-list {
+  list-style: none;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  border-top: 1px solid rgba(201, 162, 75, 0.18);
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  align-items: center;
+  gap: 1.6rem;
+  padding: 1.6rem 0;
+  border-bottom: 1px solid rgba(201, 162, 75, 0.18);
+}
+
+.cart-item__price {
+  margin: 0.4rem 0 0;
+  font-size: 0.85rem;
+  color: rgba(242, 233, 221, 0.5);
+}
+
+.cart-item__qty {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.cart-item__step {
+  width: 26px;
+  height: 26px;
+  border: 1px solid rgba(201, 162, 75, 0.35);
+  background: none;
+  color: var(--cream);
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.cart-item__step:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.cart-item__subtotal {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.2rem;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.cart-item__remove {
+  background: none;
+  border: none;
+  color: rgba(242, 233, 221, 0.4);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 0.2rem;
+}
+
+.cart-item__remove:hover {
+  color: var(--wine);
+}
+
+.cart-empty {
+  margin-top: 2.5rem;
+  color: rgba(242, 233, 221, 0.6);
+}
+
+.cart-summary {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(201, 162, 75, 0.3);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.cart-summary__total {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.6rem;
+  color: var(--cream);
+}
+
+.cart-summary__total strong {
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.cart-summary .cta.is-disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* -------------------- Contact -------------------- */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4vw;
+}
+
+.contact__details {
+  margin: 2rem 0 0;
+  display: grid;
+  gap: 1.2rem;
+}
+
+.contact__details dt {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.3rem;
+}
+
+.contact__details dd {
+  margin: 0;
+  font-size: 0.98rem;
+  color: rgba(242, 233, 221, 0.85);
+}
+
+.contact__details a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contact__details a:hover {
+  color: var(--gold);
+}
+
+.contact__note {
+  margin: 1.5rem 0 0;
+  font-size: 0.78rem;
+  font-style: italic;
+  color: rgba(242, 233, 221, 0.4);
+}
+
+.contact__form {
+  display: grid;
+  gap: 1.2rem;
+  align-content: start;
+}
+
+.field {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.field label {
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: rgba(242, 233, 221, 0.72);
+}
+
+.field input,
+.field textarea {
   width: 100%;
-  filter: blur(5px) drop-shadow(10px 16px 18px rgba(0, 0, 0, 0.35));
+  padding: 0.8rem 1rem;
+  background: rgba(242, 233, 221, 0.04);
+  border: 1px solid rgba(201, 162, 75, 0.28);
+  border-radius: 2px;
+  color: var(--cream);
+  font-family: inherit;
+  font-size: 0.95rem;
+  resize: vertical;
 }
 
-.layer--back-bokeh .layer__inner {
-  animation-duration: 7.5s;
-  animation-delay: -1.2s;
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--gold);
 }
 
-/* Glass: center stage */
-.layer--glass {
-  top: 50%;
-  left: 50%;
-  width: 62%;
-  z-index: 2;
-  transform: translate3d(calc(-50% + var(--px)), calc(-50% + var(--py)), 0);
-}
-
-.layer--glass img {
+.cta--block {
   width: 100%;
-  filter: drop-shadow(14px 30px 26px rgba(0, 0, 0, 0.55)) drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+  text-align: center;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
 }
 
-.layer--glass .layer__inner {
-  animation-duration: 6s;
-  animation-delay: -3s;
+.contact__feedback {
+  min-height: 1.2rem;
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--gold);
 }
 
-/* Front grapes: crisp, overflowing the frame's edge */
-.layer--front-grapes {
-  bottom: -12%;
-  right: -16%;
-  width: 46%;
-  z-index: 3;
+/* -------------------- Footer -------------------- */
+
+.footer {
+  margin-left: var(--rail-w);
+  padding: 5vh 5vw 3vh;
+  text-align: center;
+  border-top: 1px solid rgba(201, 162, 75, 0.14);
 }
 
-.layer--front-grapes img {
-  width: 100%;
-  filter: drop-shadow(16px 22px 20px rgba(0, 0, 0, 0.5));
+.footer__wordmark {
+  margin: 0 0 1.4rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.6rem;
+  color: var(--cream);
 }
 
-.layer--front-grapes .layer__inner {
-  animation-duration: 5.5s;
-  animation-delay: -0.4s;
+.footer__links {
+  display: flex;
+  justify-content: center;
+  gap: 1.6rem;
+  margin-bottom: 1.6rem;
 }
 
-@keyframes bob {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
+.footer__links a {
+  color: rgba(242, 233, 221, 0.7);
+  text-decoration: none;
+  font-size: 0.85rem;
 }
 
-/* -------------------- Reduced motion -------------------- */
+.footer__links a:hover {
+  color: var(--gold);
+}
 
-@media (prefers-reduced-motion: reduce) {
-  .layer {
-    transition: none !important;
-  }
-  .layer__inner {
-    animation: none !important;
-  }
+.footer__copy {
+  margin: 0;
+  font-size: 0.76rem;
+  color: rgba(242, 233, 221, 0.4);
 }
 
 /* -------------------- Responsive -------------------- */
 
 @media (max-width: 920px) {
+  .rail {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    width: 100%;
+    height: 64px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5vw;
+    border-right: none;
+    border-bottom: 1px solid rgba(201, 162, 75, 0.16);
+  }
+
+  .rail__nav {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 0.5rem 5vw 1.5rem;
+    background: var(--bg);
+    border-bottom: 1px solid rgba(201, 162, 75, 0.16);
+  }
+
+  .rail.is-open .rail__nav {
+    display: flex;
+  }
+
+  .rail__nav a {
+    writing-mode: horizontal-tb;
+    transform: none;
+    width: 100%;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid rgba(201, 162, 75, 0.1);
+  }
+
+  .rail__right {
+    margin-top: 0;
+    flex-direction: row;
+    gap: 0.8rem;
+  }
+
+  .rail__toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .rail__toggle span {
+    display: block;
+    height: 1px;
+    background: var(--cream);
+  }
+
+  .content,
+  .footer {
+    margin-left: 0;
+    width: 100%;
+    padding-top: 64px;
+  }
+
+  .footer {
+    padding-top: 5vh;
+  }
+
   .hero {
     grid-template-columns: 1fr;
-    text-align: center;
+    text-align: left;
     padding-top: 8vh;
-    gap: 3rem;
   }
 
-  .hero__content {
-    max-width: none;
-    justify-self: center;
+  .hero__panel {
+    border-left: none;
+    border-top: 1px solid rgba(201, 162, 75, 0.35);
+    padding-left: 0;
+    padding-top: 1.6rem;
   }
 
-  .subcopy {
-    margin-left: auto;
-    margin-right: auto;
+  .block__grid,
+  .contact-grid,
+  .product-hero {
+    grid-template-columns: 1fr;
   }
 
-  .frame {
-    width: min(70vw, 380px);
+  .product-hero__media {
+    margin-bottom: 1rem;
+  }
+
+  .product-grid,
+  .cross-sell {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-item {
+    grid-template-columns: 1fr auto;
+    row-gap: 0.8rem;
+  }
+
+  .cart-item__subtotal {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .cart-item__qty {
+    grid-column: 1;
+  }
+
+  .cart-item__remove {
+    grid-column: 2;
+    justify-self: end;
   }
 }
 
-@media (max-width: 480px) {
-  .headline {
-    font-size: clamp(2.1rem, 9vw, 2.8rem);
+@media (max-width: 560px) {
+  .hero__headline {
+    font-size: clamp(2.2rem, 10vw, 3rem);
   }
 
-  .eyebrow {
-    font-size: 0.68rem;
-    letter-spacing: 0.22em;
+  .hero__actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
   }
 
-  .frame {
-    width: min(78vw, 320px);
+  .bento {
+    grid-template-columns: 1fr;
   }
 
-  .layer--back-bokeh {
-    display: none;
+  .bento__item--feature,
+  .bento__item--cta {
+    grid-column: auto;
   }
 }
