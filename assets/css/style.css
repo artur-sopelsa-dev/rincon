@@ -284,7 +284,73 @@ a {
   color: rgba(242, 233, 221, 0.68);
 }
 
-/* -------------------- Bento collection grid -------------------- */
+/* -------------------- Bento collection grid (pinned catalog) -------------------- */
+
+.catalog {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.catalog__frame {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8vh 0;
+}
+
+.catalog__track {
+  display: flex;
+  flex-direction: column;
+}
+
+.catalog__step {
+  height: 100vh;
+}
+
+.catalog__dots {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1.6rem;
+}
+
+.catalog__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(201, 162, 75, 0.3);
+}
+
+.catalog__dot.is-active {
+  background: var(--gold);
+}
+
+.catalog__specs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: rgba(242, 233, 221, 0.68);
+}
+
+.catalog__bottle {
+  width: 84px;
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+/* Only the active product's 4 cells participate in the grid */
+.catalog-product {
+  display: none;
+}
+
+.catalog-product.is-active {
+  display: contents;
+}
 
 .bento {
   margin-top: 1rem;
@@ -305,6 +371,7 @@ a {
 .bento__item--feature {
   grid-column: 1;
   grid-row: 1 / span 2;
+  justify-content: center;
 }
 
 .bento__item--feature .wine-card__name {
@@ -324,13 +391,47 @@ a {
 .bento__item--cta {
   grid-column: 3;
   grid-row: 1 / span 2;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   background: var(--brown);
-  text-decoration: none;
-  color: inherit;
 }
 
-.bento__item--cta:hover {
-  background: rgba(58, 36, 21, 0.7);
+/* Without JS (or below 921px) show every product stacked, plain, no pinning */
+.catalog:not(.is-active-js) .catalog__frame {
+  position: static;
+  min-height: 0;
+  padding: 0;
+}
+
+.catalog:not(.is-active-js) .catalog__track,
+.catalog:not(.is-active-js) .catalog__dots {
+  display: none;
+}
+
+.catalog:not(.is-active-js) .bento {
+  display: block;
+  background: none;
+}
+
+.catalog:not(.is-active-js) .catalog-product {
+  display: block;
+}
+
+.catalog:not(.is-active-js) .catalog-product:not(:last-child) {
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(201, 162, 75, 0.14);
+}
+
+.catalog:not(.is-active-js) .bento__item {
+  padding: 0.6rem 0;
+}
+
+.catalog:not(.is-active-js) .bento__item--cta {
+  align-items: flex-start;
+  text-align: left;
+  background: none;
 }
 
 .wine-card__type {
@@ -349,21 +450,10 @@ a {
 }
 
 .wine-card__note {
-  margin: 0 0 1.2rem;
+  margin: 0;
   font-size: 0.88rem;
   line-height: 1.6;
   color: rgba(242, 233, 221, 0.65);
-  flex: 1;
-}
-
-.wine-card__link {
-  font-size: 0.8rem;
-  color: var(--gold);
-  text-decoration: none;
-}
-
-.wine-card__link:hover {
-  text-decoration: underline;
 }
 
 /* -------------------- Invert (light) section -------------------- */
