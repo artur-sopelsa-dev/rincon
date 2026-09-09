@@ -159,6 +159,16 @@ var RinconCart = (function () {
   };
 })();
 
+// -------------------- WhatsApp icon: link to a general chat, same number as checkout --------------------
+(function () {
+  var link = document.getElementById("whatsapp-link");
+  if (!link) return;
+  var text = encodeURIComponent(
+    "Olá! Vim pelo site da Rincón del Vino e queria saber mais."
+  );
+  link.href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + text;
+})();
+
 // -------------------- Cart: badge + add-to-cart buttons (present on every page) --------------------
 (function () {
   function updateBadge() {

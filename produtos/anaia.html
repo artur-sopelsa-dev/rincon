@@ -31,29 +31,55 @@
           <a href="./" class="is-current"><span class="rail__num">02</span>Seleção</a>
           <a href="../index.html#editorial"><span class="rail__num">03</span>Editorial</a>
           <a href="../index.html#contato"><span class="rail__num">04</span>Contato</a>
+        </nav>
+
+        <div class="rail__right">
           <a
-            class="rail__nav-social"
+            class="rail__icon"
             href="https://www.instagram.com/rincondelvino.arg/"
             target="_blank"
             rel="noopener"
-          >Instagram</a>
-          <a href="../carrinho.html" class="rail__cart">
-            Carrinho
+            aria-label="Instagram"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.3" cy="6.7" r="0.9" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+          <a
+            class="rail__icon"
+            id="whatsapp-link"
+            href="#"
+            target="_blank"
+            rel="noopener"
+            aria-label="WhatsApp"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+              <path d="M12 3a9 9 0 1 0 6.5 15.3L21 21l-2.7-2.5A9 9 0 0 0 12 3Z" stroke-linejoin="round" />
+              <path d="M8.4 8.6c.3-.6.9-1.3 1.5-1 .5.2 1 1.3 1.2 1.7.2.4.1.6-.1.9-.2.3-.4.5-.6.7-.2.2-.2.4 0 .7.4 1 1.6 2.1 2.6 2.5.3.1.5.1.7-.1.2-.2.5-.5.7-.7.3-.2.5-.3.9-.1.5.2 1.5.7 1.7 1.1.3.4.3.9 0 1.4-.4.6-1.3 1-2 1-2 0-5.4-2.2-6.7-6.3-.2-.7 0-1.8.1-2.8Z" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+          <a href="../carrinho.html" class="rail__icon rail__icon--cart" aria-label="Carrinho">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+              <path d="M4 8h16l-1.5 11.2A1.5 1.5 0 0 1 17 20.5H7a1.5 1.5 0 0 1-1.5-1.3L4 8Z" stroke-linejoin="round" />
+              <path d="M8 8V6a4 4 0 0 1 8 0v2" stroke-linecap="round" />
+            </svg>
             <span class="rail__cart-badge" id="cart-count" hidden>0</span>
           </a>
-        </nav>
 
-        <button
-          class="rail__toggle"
-          id="nav-toggle"
-          aria-label="Abrir menu"
-          aria-expanded="false"
-          aria-controls="nav-links"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+          <button
+            class="rail__toggle"
+            id="nav-toggle"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="nav-links"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </aside>
 
       <main class="content">
