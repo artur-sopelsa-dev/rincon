@@ -85,7 +85,8 @@ a {
   letter-spacing: 0.06em;
 }
 
-.rail__nav a:hover {
+.rail__nav a:hover,
+.rail__nav a.is-current {
   color: var(--gold);
 }
 
@@ -291,6 +292,11 @@ a {
   margin-top: 1rem;
 }
 
+.catalog__more {
+  display: inline-block;
+  margin-top: 2rem;
+}
+
 .catalog__frame {
   position: sticky;
   top: 0;
@@ -454,6 +460,115 @@ a {
   font-size: 0.88rem;
   line-height: 1.6;
   color: rgba(242, 233, 221, 0.65);
+}
+
+/* -------------------- Product listing grid -------------------- */
+
+.product-grid {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(201, 162, 75, 0.18);
+}
+
+.product-card {
+  background: var(--bg);
+  padding: 2.6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s ease;
+}
+
+.product-card:hover {
+  background: rgba(58, 36, 21, 0.45);
+}
+
+.product-card__bottle {
+  width: 56px;
+  height: auto;
+  margin-bottom: 1.6rem;
+}
+
+.product-card .wine-card__note {
+  margin: 0.8rem 0 1.6rem;
+}
+
+.product-card__link {
+  margin-top: auto;
+  font-size: 0.8rem;
+  color: var(--gold);
+}
+
+/* -------------------- Product detail page -------------------- */
+
+.product-hero {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 5vw;
+  align-items: center;
+}
+
+.product-hero__media {
+  display: flex;
+  justify-content: center;
+}
+
+.product-hero__media .catalog__bottle {
+  width: min(220px, 100%);
+  margin: 0;
+}
+
+.product-hero__info .wine-card__type {
+  font-size: 0.78rem;
+}
+
+.product-hero__info .block__title {
+  max-width: none;
+}
+
+.product-hero__specs {
+  margin: 2rem 0;
+  padding: 1.4rem 0;
+  border-top: 1px solid rgba(201, 162, 75, 0.2);
+  border-bottom: 1px solid rgba(201, 162, 75, 0.2);
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 2.4rem;
+}
+
+.cross-sell {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: rgba(24, 15, 9, 0.15);
+}
+
+.cross-sell a {
+  background: var(--cream);
+  color: var(--bg);
+  padding: 1.6rem 1.8rem;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.cross-sell a:hover {
+  background: rgba(24, 15, 9, 0.06);
+}
+
+.cross-sell .wine-card__type {
+  font-size: 0.68rem;
+}
+
+.cross-sell .wine-card__name {
+  font-size: 1.2rem;
+  color: var(--bg);
 }
 
 /* -------------------- Invert (light) section -------------------- */
@@ -708,24 +823,18 @@ a {
   }
 
   .block__grid,
-  .contact-grid {
+  .contact-grid,
+  .product-hero {
     grid-template-columns: 1fr;
   }
 
-  .bento {
-    grid-template-columns: 1fr 1fr;
+  .product-hero__media {
+    margin-bottom: 1rem;
   }
 
-  .bento__item--feature,
-  .bento__item--cta {
-    grid-column: span 2;
-    grid-row: auto;
-  }
-
-  .bento__item:nth-child(2),
-  .bento__item:nth-child(3) {
-    grid-column: auto;
-    grid-row: auto;
+  .product-grid,
+  .cross-sell {
+    grid-template-columns: 1fr;
   }
 }
 
